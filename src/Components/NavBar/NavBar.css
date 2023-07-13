@@ -1,0 +1,41 @@
+.navbar_container{
+    min-width: 100%;
+    background-color: rgb(36, 36, 13) ;
+    display: flex;
+    justify-content: space-around; 
+}
+
+.navbar_list{
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+}
+
+.navbar_category{
+    width: max-content;
+    padding: 1rem 4rem;
+}
+
+.navbar_category:hover{
+    transition: 1s;
+    background-color: white;
+}
+
+.navbar_category-link{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 110%;
+    text-shadow: 1px 1px 2px grey;}
+
+.navbar_category-link:hover{
+    transition: 1s;
+    color: rgb(255, 255, 0);
+}
+
+.navbar_category-link:visited{
+    color: none;
+}
+
+.navbar_category-suplementos{
+    margin-left: 0.4rem;
+}

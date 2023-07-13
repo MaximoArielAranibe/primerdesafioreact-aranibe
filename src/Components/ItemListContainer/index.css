@@ -1,0 +1,13 @@
+.item_list_container{
+    min-width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0rem 4rem;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    letter-spacing: 1.5vw;
+    background-color: #fff;
+    color: black;
+}
