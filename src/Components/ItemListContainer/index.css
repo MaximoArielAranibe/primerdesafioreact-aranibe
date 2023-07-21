@@ -2,12 +2,17 @@
     min-width: max-content;
     height: max-content;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 3rem 0rem 4rem;
+    padding: 6rem 0rem;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    font-size: 4.5rem;
-    letter-spacing: 1.5vw;
     background-color: #fff;
     color: black;
+}
+
+.item_list_title{
+    font-size: 4.5rem;
+    letter-spacing: 1.3vw;
+    font-weight: bold;
 }

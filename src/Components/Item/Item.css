@@ -1,0 +1,25 @@
+.product_container{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    align-items: center;
+}
+
+.product_title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.product_description{
+
+}
+
+.product_image{
+    width: 400px;
+    height: 400px;
+}
+
+.product_price{
+
+}
