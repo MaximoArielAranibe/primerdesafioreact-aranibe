@@ -46,9 +46,7 @@ const ItemListContainer = (props) => {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <hr className="item-hr" />
       <h3 className="item_list_title">Nuestros productos</h3>
-      <hr className="item-hr" />
       <section className="main-container">{props.children}</section>
     </main>
   );

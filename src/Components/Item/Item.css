@@ -1,5 +1,4 @@
 .product_container{
-    margin-top: 3rem;
     display: flex;
     justify-content: center;
     flex-flow: column;
@@ -8,7 +7,9 @@
 }
 
 .product_title{
-    font-family: ;
+    font-size: 2rem;
+    font-family: Roboto;
+    font-weight: 900;
 }
 
 .product_description{
@@ -18,8 +19,13 @@
 .product_image{
     width: 400px;
     height: 400px;
+    margin: 3vh 0vh;
 }
 
 .product_price{
-
+    letter-spacing: 0.7rem;
+    margin: 1rem 0rem 2rem;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 2rem;
 }

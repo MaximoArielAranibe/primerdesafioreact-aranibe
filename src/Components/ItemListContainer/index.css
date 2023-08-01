@@ -1,6 +1,6 @@
 .item_list_container{
     justify-content: center;
-    padding: 3rem 0rem;
+    padding: 5rem 0rem;
     text-align: center;
     font-family: 'Oswald', sans-serif;
     background-color: #fff;
@@ -11,6 +11,10 @@
     font-size: 4.5rem;
     letter-spacing: 1.3vw;
     font-weight: bold;
+    background-color: black;
+    color: white;
+    padding: 3rem 0rem;
+    margin: 5rem 0rem 3rem;
 }
 
 .c-item{
@@ -24,5 +28,10 @@
 }
 
 .item-hr{
-    margin: 3rem 0rem;
+    margin: 5rem 0rem;
 }
+
+hr{
+    opacity: 80%;
+}
+
