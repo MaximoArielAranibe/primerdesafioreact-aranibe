@@ -1,25 +1,18 @@
-import './App.css';
-import NavBar from './Components/NavBar/NavBar.jsx';
-import ItemListContainer from './Components/ItemListContainer/ItemListcontainer.jsx';
-import ItemList from './Components/ItemList/ItemList.jsx';
-import { Link, Routes, Route } from 'react-router-dom';
-import { Suplementos } from './pages/Suplementos';
+import "./App.css";
+import NavBar from "./Components/NavBar/NavBar.jsx";
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-
-
   return (
     <div className="App">
-      <Routes>
-        <Route>
-          <Route path='/suplementos' element={<Suplementos />} />
-        </Route>
-      </Routes>
-      <NavBar />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer />} />
 
-      <ItemListContainer>
-        <ItemList></ItemList>
-      </ItemListContainer>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
