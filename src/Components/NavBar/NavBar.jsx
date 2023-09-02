@@ -1,8 +1,8 @@
-import './NavBar.css'
-import { Link } from 'react-router-dom';
+import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  return (
+  return ( 
     <nav className="navbar_container">
       <ul className="navbar_list">
         <li className="navbar_category">
@@ -12,19 +12,32 @@ const NavBar = () => {
         </li>
 
         <li className="navbar_category">
-          <Link to="/suplementos" className="navbar_category-link">
+          <Link to="/suplementos" className="navbar_category-link suplementos">
             SUPLEMENTOS
           </Link>
+          <ul className="sub-menu">
+            <li className="sub-menu_link">
+              <Link to="/suplementos/proteinas">Proteinas</Link>
+            </li>
+            <li className="sub-menu_link">
+              <Link to="/suplementos/preentrenos">Pre-entrenos</Link>
+            </li>
+            <li className="sub-menu_link">
+              <Link to="/suplementos/quemadores-de-grasa">
+                Quemadores de grasa
+              </Link>
+            </li>
+          </ul>
         </li>
 
         <li className="navbar_category">
-          <Link href="/" className="navbar_category-link">
-            OFERTAS DEL DIA
+          <Link to="/combos" className="navbar_category-link">
+            COMBOS
           </Link>
         </li>
 
         <li className="navbar_category">
-          <Link href="/" className="navbar_category-link">
+          <Link to="/carrito" className="navbar_category-link">
             CARRITO
           </Link>
         </li>

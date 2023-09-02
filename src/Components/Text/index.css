@@ -1,0 +1,14 @@
+.title{
+    color: whitesmoke;
+    background-color: #1e0a0a;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    font-family: monospace;
+    font-weight: 700;
+    padding: 2rem 0;
+    font-size: 2rem;
+    letter-spacing: 1.2rem;
+    font-style: italic;
+}
+

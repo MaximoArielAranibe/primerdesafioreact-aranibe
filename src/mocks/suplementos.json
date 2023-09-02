@@ -2,10 +2,10 @@
   {
     "id": 1,
     "name": "Whey Protein Isolated",
-    "category": "Proteinas",
+    "category": "proteinas",
     "brand": "ENA",
     "weight": "930grs",
-    "description": "description",
+    "description": "Whey Protein Isolate (WPI) es la forma más pura de proteína de suero que existe actualmente. Al sumarla a nuestra fórmula clásica (WPC + WPI) elevamos el estándar de calidad, asegurándote un mejor producto en cada scoop para que logres la performance que buscas.TRUEMADE contiene un blend de máxima pureza con una rápida absorción y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular:- Whey protein concentrate (WPC): perfil completo de aminoácidos esenciales, brindando la mejor calidad de proteínas para aumentar la energía durante el entrenamiento.- Whey Protein Isolate (WPI): máxima pureza. Bajo en carbohidratos, grasas y fácil de digerir logrando una mayor absorción de la proteína.",
     "price": 10000,
     "stock": 1,
     "thumbnail": "https://i.ibb.co/WgZQLyG/whey-protein-ena.png"
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "name": "Beast Blood",
-    "category": "Preentrenos",
+    "category": "preentrenos",
     "brand": "No se",
     "weigth": "350grs",
     "description": "description",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "name": "Ripped X",
-    "category": "Quemadores de grasa",
+    "category": "quemadores-de-grasa",
     "brand": "ENA",
     "weight": "60 capsulas",
     "description": "Quemador de grasa con pimienta",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "name": "Whey Protein",
-    "category": "Proteinas",
+    "category": "proteinas",
     "brand": "SPX",
     "weigth": "1080grs",
     "description": "description",
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "name": "Whey Protein&Mass",
-    "category": "Proteinas",
+    "category": "proteinas",
     "brand": "SPX",
     "weigth": "1080grs",
     "description": "description",
@@ -57,18 +57,18 @@
   {
     "id": 6,
     "name": "Whey Protein Cutter",
-    "category": "Proteinas",
+    "category": "proteinas",
     "brand": "SPX",
     "weigth": "1080grs",
     "description": "description",
-    "price": 5500,
+    "price": 57500,
     "stock": 25,
     "thumbnail": "https://i.ibb.co/kxLchVr/whey-cutter-spx.png"
   },
   {
     "id": 7,
     "name": "Whey Protein",
-    "category": "Quemadores de grasa",
+    "category": "quemadores-de-grasa",
     "brand": "ENA",
     "weigth": "1080",
     "description": "description",
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "name": "Whey Protein",
-    "category": "Quemadores de grasa",
+    "category": "quemadores-de-grasa",
     "brand": "ENA",
     "weigth": "1080",
     "description": "description",
@@ -90,7 +90,7 @@
   {
     "id": 9,
     "name": "Whey Protein",
-    "category": "Quemadores de grasa",
+    "category": "proteinas",
     "brand": "ENA",
     "weigth": "1080",
     "description": "description",

@@ -1,15 +1,24 @@
-import React from 'react'
-import './Item.css'
-import { CardContent } from '@mui/material';
+import React from "react";
+import "./Item.css";
+import { Link } from "react-router-dom";
 
-export const Item = (props) => {
+const Item = ({ producto }) => {
   return (
-    <CardContent>
-        <h3 className='product_title'>{props.name}</h3>
-        <img className='product_image' src={props.thumbnail} alt={props.brand} />
-        <h4 className='product_price'>${props.price}</h4>
-        <p className='product_description'>{props.description}</p>
-        <hr />
-    </CardContent>
-    );
-}
+    <div className="product_container">
+      <h2 className="product_name">{producto.name}</h2>
+      <img
+        className="product_image"
+        src={producto.thumbnail}
+        alt={producto.title}
+      />
+      <p className="product_price">${producto.price}</p>
+      <div className="product_button_container">
+        <button className="product_button">
+          <Link to={`/item/${producto.id}`}>Ver mas</Link>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Item;

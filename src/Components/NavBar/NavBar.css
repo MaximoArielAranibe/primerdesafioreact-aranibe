@@ -1,45 +1,74 @@
 ul{
-    margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
 }
 
 .navbar_container{
     min-width: 100%;
     background-color: rgb(36, 36, 13) ;
     display: flex;
-    justify-content: space-around; 
-}
+  justify-content: center;
+  text-align: center;
+  }
 
 .navbar_list{
     display: flex;
-    flex-flow: row wrap;
-    list-style: none;
-}
+    flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  }
 
 .navbar_category{
-    width: max-content;
     padding: 1rem 4rem;
-}
-
-.navbar_category:hover{
-    transition: 1s;
-    background-color: white;
+    position: relative;
 }
 
 .navbar_category-link{
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-size: 110%;
-    text-shadow: 1px 1px 2px grey;}
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px grey;
+  
+  }
 
 .navbar_category-link:hover{
-    transition: 1s;
+    transition: 0.5s;
     color: rgb(255, 255, 0);
 }
 
-.navbar_category-link:visited{
-    color: none;
+.sub-menu { 
+  opacity: 0; /* 0 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-2em);
+  z-index: -1; /* -1 */
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
 }
 
-.navbar_category-suplementos{
-    margin-left: 0.4rem;
+ .navbar_category:focus .sub-menu,
+.navbar_category:focus-within .sub-menu,
+.navbar_category:hover .sub-menu{
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0.3rem);
+  transition-delay: 0s, 0s, 0.3s;
+} 
+
+.sub-menu_link{
+  background-color: wheat;
+  padding: 0.4rem 1rem;
+  position: relative;
+}
+
+.sub-menu_link a:visited{
+  color: black;
+  text-align: center;
 }

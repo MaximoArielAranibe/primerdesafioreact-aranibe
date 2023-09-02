@@ -1,9 +1,9 @@
 import React from "react";
 
-const Carousel = () => {
+export const Carousel = () => {
   return (
-    <header className="item_list_container">
-      <div id="suplementos-carousel" class="carousel slide">
+    <header>
+      <div id="suplementos-carousel" class="carousel slide my-5">
         <div class="carousel-inner">
           <div class="carousel-item active c-item">
             <img
@@ -34,7 +34,7 @@ const Carousel = () => {
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden">Anterior</span>
         </button>
         <button
           class="carousel-control-next"
@@ -43,12 +43,10 @@ const Carousel = () => {
           data-bs-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden">Siguiente</span>
         </button>
       </div>
-      <h3 className="item_list_title">Nuestros productos</h3>
     </header>
   );
 };
 
-export default Carousel;

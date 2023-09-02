@@ -1,9 +1,10 @@
 {
   "name": "primerdesafioreact-aranibe",
-  "homepage": "https://maximoarielaranibe.github.io/primerdesafioreact-aranibe.github.io/",
+  "homepage": "https://maximoarielaranibe.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.0",

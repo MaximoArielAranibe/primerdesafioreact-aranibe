@@ -1,26 +1,36 @@
 .product_container{
+    width: 80%;
+    position: relative;
     display: flex;
     justify-content: center;
-    flex-flow: column;
-    text-align: center;
     align-items: center;
+    flex-flow: column wrap;
+    text-align: center;
+    position: relative;
+    background-color: bisque;
+    margin-top: 3rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
 }
 
-.product_title{
-    font-size: 2rem;
-    font-family: Roboto;
+.product_container:hover {
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+}
+
+.product_name{
+    font-size: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 900;
-}
-
-.product_description{
-
+    padding-top: 2rem;
 }
 
 .product_image{
-    width: 400px;
+    width: 80%;
     height: 400px;
     margin: 3vh 0vh;
 }
+
 
 .product_price{
     letter-spacing: 0.7rem;
@@ -28,4 +38,21 @@
     font-family: Roboto;
     font-weight: 900;
     font-size: 2rem;
+}
+
+.product_button_container{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.product_button{
+    position: relative;
+    padding: 1rem 35%;
+}
+
+
+
+a{
+    color: black;
 }
