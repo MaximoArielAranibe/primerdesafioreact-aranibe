@@ -19,8 +19,10 @@ function App() {
             element={
               <>
                 <Carousel />
-                <Text texto="Productos"/>
-                <ItemListContainer />
+                <section>
+                  <Text texto="¡Nuestros Productos!" />
+                  <ItemListContainer />
+                </section>
               </>
             }
             errorElement={<ErrorPage />}

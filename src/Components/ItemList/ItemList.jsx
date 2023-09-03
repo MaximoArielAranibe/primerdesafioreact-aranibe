@@ -5,13 +5,13 @@ import './index.css'
 const ItemList = ({productos}) => {
 
   return (
-    <div className="item_list_container">
+    <article className="item_list_container">
       {
         productos.map((producto) => {
           return (<Item key={producto.id} producto={producto} />);
         })
 			}
-    </div>
+    </article>
   );
 };
 
