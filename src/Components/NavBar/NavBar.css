@@ -1,74 +1,86 @@
-ul{
+ul {
   margin: 0;
   padding: 0;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-.navbar_container{
-    min-width: 100%;
-    background-color: rgb(36, 36, 13) ;
-    display: flex;
-  justify-content: center;
-  text-align: center;
-  }
+.navbar_container {
+  width: 100%;
+  background-color: rgb(36, 36, 13);
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
 
-.navbar_list{
-    display: flex;
-    flex-flow: column wrap;
+.navbar_list {
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   list-style: none;
-  }
-
-.navbar_category{
-    padding: 1rem 4rem;
-    position: relative;
 }
 
-.navbar_category-link{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 2px grey;
-  
-  }
-
-.navbar_category-link:hover{
-    transition: 0.5s;
-    color: rgb(255, 255, 0);
+.navbar_category {
+  padding: 0.9rem;
+  position: relative;
 }
 
-.sub-menu { 
+.navbar_category-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 0.7rem;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.navbar_category-link:hover {
+  transition: 0.5s;
+  color: rgb(255, 255, 0);
+}
+
+.sub-menu {
+  list-style: none;
   opacity: 0; /* 0 */
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  transform: translateY(-2em);
-  z-index: -1; /* -1 */
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
-}
-
- .navbar_category:focus .sub-menu,
-.navbar_category:focus-within .sub-menu,
-.navbar_category:hover .sub-menu{
-  visibility: visible;
+  z-index: 1; /* -1 */
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
+    z-index 0s linear 0.01s;
+  }
+  
+  .navbar_category:focus .sub-menu,
+  .navbar_category:focus-within .sub-menu,
+  .navbar_category:hover .sub-menu {
+    visibility: visible;
   opacity: 1;
   z-index: 1;
-  transform: translateY(-0.4rem);
-  transition-delay: 0s, 0s, 0.3s;
-} 
-
-.sub-menu_link{
-  background-color: wheat;
-  padding: 0.4rem 1rem;
-  position: relative;
+  transform: translateY(-1.2rem);
+  transition-delay: 0.5s, 0.5s, 0.5s;
 }
 
-.sub-menu_link a:visited{
+.sub-menu_link {
+  background-color: #fff;
+  padding: 0.4rem 1rem;
+  position: relative;
+  border-bottom: 2px rgb(0, 0, 0) solid;
+}
+
+.sub-menu_link a:visited {
   color: black;
   text-align: center;
+}
+
+
+@media (min-width:576px) {
+
+  .navbar_category-link{
+    font-size: 1rem;
+  }
+  .navbar_category{
+    padding: 1rem 2rem;
+  }
 }

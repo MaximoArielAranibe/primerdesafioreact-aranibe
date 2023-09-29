@@ -6,12 +6,18 @@ import { ItemDetailContainer } from "./Components/ItemDetailContainer/ItemDetail
 import ErrorPage from "./Components/ErrorPage.jsx/ErrorPage";
 import { Carousel } from "./Components/Carousel/Carousel";
 import { Text } from "./Components/Text/Text";
+import ScrollToTop from "react-scroll-to-top";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
+        <ScrollToTop smooth color="#000" />
         <Routes>
           <Route
             exact

@@ -1,7 +1,16 @@
-.item_list_container{
-    width: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
+.item_list_container {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .item_list_container {
+    flex-flow: row wrap;
+    gap: 2rem;
     align-items: center;
+    align-content: center;
+  }
 }

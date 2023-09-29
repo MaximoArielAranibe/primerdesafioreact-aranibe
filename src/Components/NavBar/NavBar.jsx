@@ -27,6 +27,11 @@ const NavBar = () => {
                 Quemadores de grasa
               </Link>
             </li>
+            <li className="sub-menu_link">
+              <Link to="/suplementos/shakers">
+                Shakers
+              </Link>
+            </li>
           </ul>
         </li>
 

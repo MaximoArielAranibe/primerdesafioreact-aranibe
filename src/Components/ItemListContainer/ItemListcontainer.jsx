@@ -12,6 +12,7 @@ const ItemListContainer = () => {
       .then((res) => {
         if (categoria) {
           setProductos(res.filter((prod => prod.category === categoria)));
+          window.scrollTo(0,0)
         } else {          
           setProductos(res);
         }
