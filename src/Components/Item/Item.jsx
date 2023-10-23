@@ -3,6 +3,7 @@ import "./Item.css";
 import { Link } from "react-router-dom";
 import { capitalize } from "@mui/material";
 
+
 const Item = ({ producto }) => {
   return (
     <article className="product_container">
@@ -15,7 +16,7 @@ const Item = ({ producto }) => {
       </div>
       <div className="info_container">
         <p className="product_brand">
-          {producto.brand}
+          <Link className="product_link-category" to={`/suplementos/${producto.brand}`}>{capitalize(producto.brand)}</Link>
           {` / `}
           <Link className="product_link-category" to={`/suplementos/${producto.category}`}>{capitalize(producto.category)}</Link>
         </p>

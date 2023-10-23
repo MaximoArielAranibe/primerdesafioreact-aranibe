@@ -17,18 +17,18 @@ const NavBar = () => {
           </Link>
           <ul className="sub-menu">
             <li className="sub-menu_link">
-              <Link to="/suplementos/proteinas">Proteinas</Link>
+              <Link className="link" to="/suplementos/proteinas">Proteinas</Link>
             </li>
             <li className="sub-menu_link">
-              <Link to="/suplementos/preentrenos">Pre-entrenos</Link>
+              <Link className="link" to="/suplementos/preentrenos">Pre-entrenos</Link>
             </li>
             <li className="sub-menu_link">
-              <Link to="/suplementos/quemadores-de-grasa">
+              <Link className="link" to="/suplementos/quemadores-de-grasa">
                 Quemadores de grasa
               </Link>
             </li>
             <li className="sub-menu_link">
-              <Link to="/suplementos/shakers">
+              <Link className="link" to="/suplementos/shakers">
                 Shakers
               </Link>
             </li>

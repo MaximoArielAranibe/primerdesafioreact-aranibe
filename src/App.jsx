@@ -4,15 +4,15 @@ import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ItemDetailContainer } from "./Components/ItemDetailContainer/ItemDetailContainer";
 import ErrorPage from "./Components/ErrorPage.jsx/ErrorPage";
-import { Carousel } from "./Components/Carousel/Carousel";
+import { MyCarousel } from "./Components/Carousel/MyCarousel";
 import { Text } from "./Components/Text/Text";
 import ScrollToTop from "react-scroll-to-top";
 import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
@@ -24,7 +24,7 @@ function App() {
             path="/"
             element={
               <>
-                <Carousel />
+                <MyCarousel />
                 <section>
                   <Text texto="¡Nuestros Productos!" />
                   <ItemListContainer />

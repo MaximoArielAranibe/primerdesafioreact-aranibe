@@ -1,4 +1,72 @@
-.carousel-control-prev, .carousel-control-next{
-    z-index: 0;
+.carousel-image{
+  max-height: 500px;
+  max-width: 768px;
 }
 
+.image-title{
+  display: none;
+}
+
+.carousel-title, .carousel-p{
+  color: #fff;
+  text-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  text-shadow: #fff 0rem 0.1rem 3rem;
+
+}
+
+.carousel-title{
+  text-decoration: underline wavy darkorchid;
+
+}
+
+.carousel-p{
+  font-style: italic;
+}
+
+
+.caption-container{
+  line-height: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.899);
+  border: darkviolet 2px ;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  padding-top: 0rem;
+}
+
+@media (min-width: 768px) {
+
+  .container-image{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .image-container{
+    position: absolute;
+    background-image: url(blur.jpg);
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+  }
+  
+  .image-title{
+    display: block;
+    color: rgba(0, 0, 0, 0.758);
+    font-size: 3rem;
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 900;
+    text-transform: capitalize;
+    text-decoration: overline wavy darkorchid;
+  }
+
+  .carousel-wrapper{
+    display: none;
+  }
+
+
+}
