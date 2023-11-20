@@ -1,69 +1,89 @@
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-
+import Logo from "./icons8-deadlift-50.png";
+import SvgCart from "../SvgCart/SvgCart.jsx";
 const NavBar = () => {
-  return ( 
+  return (
     <nav className="navbar_container">
-      <ul className="navbar_list">
-        <li className="navbar_category">
-          <Link to="/" className="navbar_category-link">
-            INICIO
-          </Link>
-        </li>
+      <div className="left-side">
+        <ul className="navbar_list">
+          <img src={Logo} alt="Logo" className="logo"/>
+          <li className="navbar_category">
+            <Link to="/" className="navbar_category-link">
+              INICIO
+            </Link>
+          </li>
 
-        <li className="navbar_category">
-          <Link to="/suplementos" className="navbar_category-link suplementos">
-            SUPLEMENTOS
-          </Link>
-          <ul className="sub-menu">
-            <li className="sub-menu_link">
-              <Link className="link" to="/suplementos/proteinas">Proteinas</Link>
-            </li>
-            <li className="sub-menu_link">
-              <Link className="link" to={"/suplementos/creatinas"}>Creatinas</Link>
-            </li>
-            <li className="sub-menu_link">
-              <Link className="link" to="/suplementos/preentrenos">Pre-entrenos</Link>
-            </li>
-            <li className="sub-menu_link">
-              <Link className="link" to="/suplementos/quemadores-de-grasa">
-                Quemadores de grasa
-              </Link>
-            </li>
-            <li className="sub-menu_link">
-              <Link className="link" to="/suplementos/shakers">
-                Shakers
-              </Link>
-            </li>
-          </ul>
-        </li>
+          <li className="navbar_category">
+            <Link
+              to="/suplementos"
+              className="navbar_category-link suplementos"
+            >
+              SUPLEMENTOS
+            </Link>
+            <ul className="sub-menu">
+              <li className="sub-menu_link">
+                <Link className="link" to="/suplementos/proteinas">
+                  Proteinas
+                </Link>
+              </li>
+              <li className="sub-menu_link">
+                <Link className="link" to={"/suplementos/creatinas"}>
+                  Creatinas
+                </Link>
+              </li>
+              <li className="sub-menu_link">
+                <Link className="link" to="/suplementos/preentrenos">
+                  Pre-entrenos
+                </Link>
+              </li>
+              <li className="sub-menu_link">
+                <Link className="link" to="/suplementos/quemadores-de-grasa">
+                  Quemadores de grasa
+                </Link>
+              </li>
+              <li className="sub-menu_link">
+                <Link className="link" to="/suplementos/shakers">
+                  Shakers
+                </Link>
+              </li>
+            </ul>
+          </li>
 
-        <li className="navbar_category navbar_category-link">
+          <li className="navbar_category navbar_category-link">
             MARCAS
-          <ul className="sub-menu">
-            <li className="sub-menu_link">
-              <Link className="link" to="/marcas/bodyadvance">Body Advance</Link>
-            </li>
-            <li className="sub-menu_link">
-              <Link className="link" to="/marcas/ena">
-                Ena
-              </Link>
-            </li>
-            <li className="sub-menu_link">
-              <Link className="link" to="/marcas/hardcore">Hardcore</Link>
-            </li>
-            <li className="sub-menu_link">
-              <Link className="link" to={"/marcas/spx"}>Spx</Link>
-            </li>
-          </ul>
-        </li>
+            <ul className="sub-menu">
+              <li className="sub-menu_link">
+                <Link className="link" to="/marcas/bodyadvance">
+                  Body Advance
+                </Link>
+              </li>
+              <li className="sub-menu_link">
+                <Link className="link" to="/marcas/ena">
+                  Ena
+                </Link>
+              </li>
+              <li className="sub-menu_link">
+                <Link className="link" to="/marcas/hardcore">
+                  Hardcore
+                </Link>
+              </li>
+              <li className="sub-menu_link">
+                <Link className="link" to={"/marcas/spx"}>
+                  Spx
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 
-        <li className="navbar_category">
-          <Link to="/carrito" className="navbar_category-link">
-            CARRITO
-          </Link>
-        </li>
-      </ul>
+      <li className="navbar_category navbar_cart">
+        <Link to="/carrito" className="navbar_category-link">
+          CARRITO
+        </Link>
+        <SvgCart />
+      </li>
     </nav>
   );
 };

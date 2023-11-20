@@ -3,6 +3,11 @@ ul {
   padding: 0;
 }
 
+.navbar_cart{
+  display: flex;
+  flex-direction: row nowrap;
+  margin: 0rem 1rem;
+}
 
 .navbar_container {
   width: 100%;
@@ -10,7 +15,9 @@ ul {
   position: sticky;
   top: 0px;
   z-index: 1;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar_list {
@@ -19,6 +26,12 @@ ul {
   justify-content: center;
   align-items: center;
   list-style: none;
+}
+
+.logo{
+  margin: 0 0.5rem;
+  width: 50px;
+  height: 100%;
 }
 
 .navbar_category {
@@ -30,7 +43,7 @@ ul {
   text-decoration: none;
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 2px grey;
-  font-size: min(3vw,20px);
+  font-size: min(3vw, 20px);
 }
 
 .navbar_category-link:hover {
@@ -63,14 +76,13 @@ ul {
   position: relative;
   background-color: #fff;
   border: black 2px solid;
-  border-width:0 2px 2px 2px;
+  border-width: 0 2px 2px 2px;
   padding: 0.4rem 0.4rem;
   position: relative;
   font-size: 0.9rem;
   line-break: auto;
   text-transform: capitalize;
   text-align: left;
-  
 }
 
 .sub-menu_link a:visited {
@@ -79,17 +91,12 @@ ul {
   text-decoration: none;
 }
 
-.sub-menu_link a:hover{
+.sub-menu_link a:hover {
   transition: 0.5s;
-  color:  darkorchid;
+  color: darkorchid;
   text-shadow: 1px 1px 2px grey;
-
 }
 
-.link{
+.link {
   text-decoration: none;
 }
-
-
-
-
