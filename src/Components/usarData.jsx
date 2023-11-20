@@ -5,19 +5,19 @@ const UsarData = () => {
 
 const [datos, setearDatos] = useState([]);
 
-    const myPromise = () => {
-        new Promise((resolve,reject) => {
-            resolve(data);
-        })
-    }
+  const myPromise = () => {
+    new Promise((resolve,reject) => {
+        resolve(data);
+      });
+    };
 
     myPromise.then(() => {
         setearDatos(data)
-    })
+    });
 
   return (
     <div>{datos}</div>
-  )
-}
+  );
+};
 
 export default UsarData

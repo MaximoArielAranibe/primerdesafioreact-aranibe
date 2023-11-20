@@ -2,11 +2,13 @@
     background-image: linear-gradient(-90deg, rgb(211, 0, 152), rgb(68, 0, 153));
     color: white;
     text-align: center;
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace;
     padding: 0.5em 0;
     font-size: 1.3rem;
     letter-spacing: 0.3rem;
     font-weight: 900;
+    line-height: 1.5rem;
+
 }
 
 @media (min-width: 576px){

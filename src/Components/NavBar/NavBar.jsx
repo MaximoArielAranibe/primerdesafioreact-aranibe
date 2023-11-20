@@ -20,6 +20,9 @@ const NavBar = () => {
               <Link className="link" to="/suplementos/proteinas">Proteinas</Link>
             </li>
             <li className="sub-menu_link">
+              <Link className="link" to={"/suplementos/creatinas"}>Creatinas</Link>
+            </li>
+            <li className="sub-menu_link">
               <Link className="link" to="/suplementos/preentrenos">Pre-entrenos</Link>
             </li>
             <li className="sub-menu_link">
@@ -35,10 +38,24 @@ const NavBar = () => {
           </ul>
         </li>
 
-        <li className="navbar_category">
-          <Link to="/combos" className="navbar_category-link">
-            COMBOS
-          </Link>
+        <li className="navbar_category navbar_category-link">
+            MARCAS
+          <ul className="sub-menu">
+            <li className="sub-menu_link">
+              <Link className="link" to="/marcas/bodyadvance">Body Advance</Link>
+            </li>
+            <li className="sub-menu_link">
+              <Link className="link" to="/marcas/ena">
+                Ena
+              </Link>
+            </li>
+            <li className="sub-menu_link">
+              <Link className="link" to="/marcas/hardcore">Hardcore</Link>
+            </li>
+            <li className="sub-menu_link">
+              <Link className="link" to={"/marcas/spx"}>Spx</Link>
+            </li>
+          </ul>
         </li>
 
         <li className="navbar_category">

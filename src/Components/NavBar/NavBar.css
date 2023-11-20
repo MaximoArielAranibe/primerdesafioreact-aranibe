@@ -30,12 +30,12 @@ ul {
   text-decoration: none;
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 2px grey;
-  font-size: 0.8rem;
+  font-size: min(3vw,20px);
 }
 
 .navbar_category-link:hover {
   transition: 0.5s;
-  color: rgb(255, 255, 0);
+  color: #32c2b9;
 }
 
 .sub-menu {
@@ -47,26 +47,30 @@ ul {
   left: 0;
   width: 100%;
   z-index: 1; /* -1 */
-  transition: all 0.5s ease-in-out 0.5, visibility 0.5s linear 0.5s,
-    z-index 0.5s linear 0.01s;
+  transition: 0.5;
 }
 
 .navbar_category:focus .sub-menu,
-.navbar_category:focus-within .sub-menu,
 .navbar_category:hover .sub-menu {
   opacity: 1;
-  z-index: 1;
-  transform: translateY(-1.2rem);
-  transition-delay: 0.5s, 0.5s, 0.5s;
+  transform: translateY(-1.3rem);
+  transition: 0.5;
   display: block;
 }
 
 .sub-menu_link {
+  min-width: fit-content;
+  position: relative;
   background-color: #fff;
   border: black 2px solid;
   border-width:0 2px 2px 2px;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.4rem;
   position: relative;
+  font-size: 0.9rem;
+  line-break: auto;
+  text-transform: capitalize;
+  text-align: left;
+  
 }
 
 .sub-menu_link a:visited {
@@ -89,12 +93,3 @@ ul {
 
 
 
-@media (min-width: 576px) {
-  .navbar_category {
-    padding: 1rem 2rem;
-  }
-
-  .navbar_category-link {
-    font-size: 1rem;
-  }
-}

@@ -16,7 +16,7 @@ const Item = ({ producto }) => {
       </div>
       <div className="info_container">
         <p className="product_brand">
-          <Link className="product_link-category" to={`/suplementos/${producto.brand}`}>{capitalize(producto.brand)}</Link>
+          <Link className="product_link-category" to={`/marcas/${producto.brand}`}>{capitalize(producto.brand)}</Link>
           {` / `}
           <Link className="product_link-category" to={`/suplementos/${producto.category}`}>{capitalize(producto.category)}</Link>
         </p>

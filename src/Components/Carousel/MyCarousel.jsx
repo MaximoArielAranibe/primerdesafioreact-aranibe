@@ -4,15 +4,21 @@ import "./index.css";
 import "./normalize.css";
 
 export const MyCarousel = () => {
+
+  const tab = <>&nbsp;&nbsp;</>;
+  
   return (
     <>
-    <div className="container-image">
-      <div className="image-container">
-      </div>
-      <h1 className="image-title">Suplementos VitalSport</h1>
-    </div>
 
-    <div className="carousel-wrapper my-5">
+    <header className="container-image">
+      <div className="image-container" />
+      <h1 className="image-title">Suplementos{tab}  
+        <span>Vital{tab}</span>
+          Sport
+      </h1>
+    </header>
+
+    <header className="carousel-wrapper my-5">
       <Carousel data-bs-theme="dark" wrap={true}>
         <Carousel.Item className="carousel-item">
           <img
@@ -22,8 +28,8 @@ export const MyCarousel = () => {
           />
           <Carousel.Caption>
             <div className="caption-container">
-            <h5 className="carousel-title">Creatina Hardcore 1kg</h5>
-            <p className="carousel-p">Potencia tus sobrecargas progresivas.</p>
+            <h5 className="carousel-title">Preentreno SPX</h5>
+            <p className="carousel-p">Lleva tu entrenamiento al limite.</p>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -34,9 +40,9 @@ export const MyCarousel = () => {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <div className="caption-container">
-            <h5 className="carousel-title">Preentreno SPX</h5>
-            <p className="carousel-p">Lleva tu entrenamiento al limite.</p>
+          <div className="caption-container">
+            <h5 className="carousel-title">Creatina Hardcore 1kg</h5>
+            <p className="carousel-p">Potencia tus sobrecargas progresivas.</p>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -56,7 +62,7 @@ export const MyCarousel = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    </div>
+    </header>
   </>
   );
 };

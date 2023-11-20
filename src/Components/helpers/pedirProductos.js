@@ -8,16 +8,24 @@ export const pedirProductos = () => {
 
 export const pedirItemPorId = (id) => {
   return new Promise((resolve, reject) => {
-      
       const item = data.find((el) => el.id === id);
-
       if (item) {
-          resolve(item);
+        resolve(item);
       } else {
-          reject({
-              error: "No se encontró el producto"
-          })
-      }
+        reject({
+          error: "No se encontró el producto"
+      });
+    };
+  });
+};
 
-  })
-}
+export const filtrarPorMarca = (brand) => {
+  return new Promise((resolve, reject) => {
+    const brand = data.filter(el => el.brand === brand);
+      if(brand) {
+        resolve(brand)
+      } else {
+        reject({error: "No se encontro la marca"});
+      };
+  });
+};

@@ -8,6 +8,7 @@ import { MyCarousel } from "./Components/Carousel/MyCarousel";
 import { Text } from "./Components/Text/Text";
 import ScrollToTop from "react-scroll-to-top";
 import { useEffect } from "react";
+import Marcas from "./Components/Marcas/Marcas";
 
 function App() {
   useEffect(() => {
@@ -43,6 +44,12 @@ function App() {
             exact
             path="/suplementos/:categoria"
             element={<ItemListContainer />}
+            errorElement={<ErrorPage />}
+          />
+          <Route
+            exact
+            path="/marcas/:brand"
+            element={<Marcas/>}
             errorElement={<ErrorPage />}
           />
 

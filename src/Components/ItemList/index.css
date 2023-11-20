@@ -9,7 +9,7 @@
 @media (min-width: 576px) {
   .item_list_container {
     flex-flow: row wrap;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
     align-content: center;
   }
