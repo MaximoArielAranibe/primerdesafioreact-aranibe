@@ -1,6 +1,13 @@
 svg {
   margin: 0 auto;
-  width: 30px;
-  height: 100%;
-	margin-left: 0.2rem;
+  width: 20px;
+  height: auto;
+  margin-left: 0.2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+	svg{
+		width: 30px;
+	};
 }

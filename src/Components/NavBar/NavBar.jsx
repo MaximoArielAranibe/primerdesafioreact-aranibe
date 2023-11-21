@@ -7,7 +7,7 @@ const NavBar = () => {
     <nav className="navbar_container">
       <div className="left-side">
         <ul className="navbar_list">
-          <img src={Logo} alt="Logo" className="logo"/>
+          <img src={Logo} alt="Logo" className="logo" />
           <li className="navbar_category">
             <Link to="/" className="navbar_category-link">
               INICIO
@@ -50,8 +50,8 @@ const NavBar = () => {
             </ul>
           </li>
 
-          <li className="navbar_category navbar_category-link">
-            MARCAS
+          <li className="navbar_category">
+            <Link className="navbar_category-link">MARCAS</Link>
             <ul className="sub-menu">
               <li className="sub-menu_link">
                 <Link className="link" to="/marcas/bodyadvance">
@@ -78,12 +78,12 @@ const NavBar = () => {
         </ul>
       </div>
 
-      <li className="navbar_category navbar_cart">
-        <Link to="/carrito" className="navbar_category-link">
-          CARRITO
-        </Link>
-        <SvgCart />
-      </li>
+      <div className="rigth-side carrito">
+            <Link to="/carrito" className="navbar_category-link">
+              CARRITO
+            </Link>
+            <SvgCart />
+      </div>
     </nav>
   );
 };
