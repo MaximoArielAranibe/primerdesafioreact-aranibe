@@ -2,6 +2,7 @@ import React from "react";
 import "./Item.css";
 import { Link } from "react-router-dom";
 import { capitalize } from "@mui/material";
+import { Button } from "../../Button/Button";
 
 
 const Item = ({ producto }) => {
@@ -29,13 +30,9 @@ const Item = ({ producto }) => {
             <span className="product_old_price">${producto.price[1]}</span>
           )}
         </div>
-        <div className="product_button_container">
           <Link to={`/item/${producto.id}`}>
-            <button className="product_button">
-              Ver mas sobre este producto
-            </button>
+            <Button text='Ver mas sobre este producto'/>
           </Link>
-        </div>
       </div>
     </article>
   );

@@ -12,8 +12,7 @@ import Marcas from "./Components/Marcas/Marcas";
 
 function App() {
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  },[]);
   return (
     <div className="App">
       <BrowserRouter>

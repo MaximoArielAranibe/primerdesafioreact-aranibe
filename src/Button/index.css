@@ -1,0 +1,27 @@
+.product_button_container {
+  position: relative;
+}
+
+.product_button {
+  min-width: 100%;
+  margin-bottom: 1rem;
+  padding: 13px 18px;
+  border: 0px;
+  border-radius: 2px;
+  background-color: rgb(68, 0, 153);
+  color: white;
+  cursor: pointer;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  letter-spacing: -0.4px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}

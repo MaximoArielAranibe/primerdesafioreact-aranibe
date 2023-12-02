@@ -15,6 +15,8 @@ const ItemListContainer = () => {
           window.scrollTo(0,0)
         } else {          
           setProductos(res);
+          window.scrollTo(0,0)
+
         }
       });
   }, [categoria]);

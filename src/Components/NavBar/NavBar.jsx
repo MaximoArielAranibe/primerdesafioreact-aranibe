@@ -2,12 +2,13 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import Logo from "./icons8-deadlift-50.png";
 import SvgCart from "../SvgCart/SvgCart.jsx";
+
 const NavBar = () => {
   return (
     <nav className="navbar_container">
       <div className="left-side">
         <ul className="navbar_list">
-          <img src={Logo} alt="Logo" className="logo" />
+          <Link to="/"><img src={Logo} alt="Logo" className="logo" /></Link>
           <li className="navbar_category">
             <Link to="/" className="navbar_category-link">
               INICIO
@@ -79,10 +80,10 @@ const NavBar = () => {
       </div>
 
       <div className="rigth-side carrito">
-            <Link to="/carrito" className="navbar_category-link">
-              CARRITO
-            </Link>
-            <SvgCart />
+        <Link to="/carrito" className="navbar_category-link">
+          CARRITO
+        </Link>
+        <SvgCart />
       </div>
     </nav>
   );

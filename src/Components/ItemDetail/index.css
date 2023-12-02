@@ -1,44 +1,81 @@
-.container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    margin: 7rem;
-    background-color: rgba(211, 208, 59, 0.625);
-    height: 400px;
-    margin: 5rem;
-};
-
-.producto-imagen_container{
-
+svg {
+  margin: 0;
 }
 
-.producto-imagen{
-    width: 400px;
-    height: 400px;
-    margin: 0rem;
-    padding: 3rem;
-
+.container {
+  margin: 1rems;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.producto-detalle{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+.name {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  max-width: fit-content;
+  line-break: loose;
+  margin-top: 2rem;
 }
 
-.titulo{
-    font-size: 2rem;
-    margin: 2rem;
+.product-image_container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.descripcion{
-    font-weight: 600;
-    line-height: 2rem;
+.product-image {
+  width: 250px;
+  height: 250px;
+  margin: 1rem 0 0.5rem;
 }
 
-@media screen and (max-width: 300px) and  {
-    .descripcion{
+.price {
+  font-size: x-large;
+}
 
-    }
+.quantity-container{
+  margin-top: 0.5rem;
+}
+
+.product-detail {
+  font-size: 16px;
+  line-break: normal;
+  margin-top: 1rem;
+}
+
+.product-attributes {
+  border: 2px solid darkmagenta;
+  border-radius: 0 0 3rem 0;
+}
+
+.product-info{
+  text-transform: capitalize;
+  text-align: left;
+  margin: 1rem;
+}
+
+.description-text {
+  margin: 1rem;
+}
+
+.description {
+  text-align: justify;
+  color: rgb(0, 0, 0);
+  background-color: dark;
+  padding: 0.5rem;
+  border: 2px solid #00ffee;
+  border-radius: 0.4rem;
+  font-size: medium;
+  margin-bottom: 1rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+}
+
+.category {
 }
