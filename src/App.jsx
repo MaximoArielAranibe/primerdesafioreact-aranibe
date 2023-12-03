@@ -11,8 +11,7 @@ import { useEffect } from "react";
 import Marcas from "./Components/Marcas/Marcas";
 
 function App() {
-  useEffect(() => {
-  },[]);
+  useEffect(() => {}, []);
   return (
     <div className="App">
       <BrowserRouter>
@@ -48,7 +47,7 @@ function App() {
           <Route
             exact
             path="/marcas/:brand"
-            element={<Marcas/>}
+            element={<Marcas />}
             errorElement={<ErrorPage />}
           />
 

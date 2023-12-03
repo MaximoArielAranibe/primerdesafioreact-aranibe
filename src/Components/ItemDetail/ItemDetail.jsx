@@ -14,14 +14,13 @@ const ItemDetail = ({ productos }) => {
 
   const [quantity, setQuantity] = useState(0);
 
-
   return (
     <main className="container">
       <section className="product-image_container">
-        <h3 className="name">
+        <h1 className="name">
           {productos.name}
           <Link to={toCapital(productos.brand)} />
-        </h3>
+        </h1>
         <div className="image-buttons">
           <img
             className="product-image"
@@ -48,7 +47,9 @@ const ItemDetail = ({ productos }) => {
       </section>
       <section className="product-detail">
         <article className="product-attributes">
-          <Text className="text" texto="Características del producto:" />
+          <div className="product-attributes_title">
+            Caracteristicas del producto
+          </div>
           <div className="product-info">
             <p>Producto: {productos.name}</p>
             <hr />
@@ -65,6 +66,7 @@ const ItemDetail = ({ productos }) => {
           </div>
         </article>
         <article className="description-text">
+          <h4>Descripcion</h4>
           <DescriptionViewer jsonData={productos} />
         </article>
       </section>

@@ -39,7 +39,7 @@ svg {
   font-size: x-large;
 }
 
-.quantity-container{
+.quantity-container {
   margin-top: 0.5rem;
 }
 
@@ -49,12 +49,14 @@ svg {
   margin-top: 1rem;
 }
 
-.product-attributes {
-  border: 2px solid darkmagenta;
-  border-radius: 0 0 3rem 0;
+.product-attributes_title {
+  font-size: larger;
+  padding: 1rem;
+  border: #00ffee 2px solid;
+  border-radius: 1rem 2rem 1rem 2rem;
 }
 
-.product-info{
+.product-info {
   text-transform: capitalize;
   text-align: left;
   margin: 1rem;
