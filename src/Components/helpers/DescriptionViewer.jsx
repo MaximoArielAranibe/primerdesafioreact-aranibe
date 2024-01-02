@@ -4,9 +4,9 @@ const DescriptionViewer = ({ jsonData }) => {
   return (
     <div>
       {jsonData.description.map((texto, index) => (
-        <p key={index} className="description">
-          {texto}
-        </p>
+        <div key={index} className="description">
+          <p>{texto}</p>
+        </div>
       ))}
     </div>
   );

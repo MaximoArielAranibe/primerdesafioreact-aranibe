@@ -17,9 +17,19 @@ const Item = ({ producto }) => {
       </div>
       <div className="info_container">
         <p className="product_brand">
-          <Link className="product_link-category" to={`/marcas/${producto.brand}`}>{capitalize(producto.brand)}</Link>
+          <Link
+            className="product_link-category"
+            to={`/marcas/${producto.brand}`}
+          >
+            {capitalize(producto.brand)}
+          </Link>
           {` / `}
-          <Link className="product_link-category" to={`/suplementos/${producto.category}`}>{capitalize(producto.category)}</Link>
+          <Link
+            className="product_link-category"
+            to={`/suplementos/${producto.category}`}
+          >
+            {capitalize(producto.category)}
+          </Link>
         </p>
         <div className="product_name-container">
           <h3 className="product_name">{producto.name}</h3>
@@ -30,9 +40,9 @@ const Item = ({ producto }) => {
             <span className="product_old_price">${producto.price[1]}</span>
           )}
         </div>
-          <Link to={`/item/${producto.id}`}>
-            <Button text='Ver mas sobre este producto'/>
-          </Link>
+        <Link to={`/item/${producto.id}`}>
+          <Button text="Ver mas sobre este producto" />
+        </Link>
       </div>
     </article>
   );

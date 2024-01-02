@@ -7,16 +7,16 @@ import ErrorPage from "./Components/ErrorPage.jsx/ErrorPage";
 import { MyCarousel } from "./Components/Carousel/MyCarousel";
 import { Text } from "./Components/Text/Text";
 import ScrollToTop from "react-scroll-to-top";
-import { useEffect } from "react";
 import Marcas from "./Components/Marcas/Marcas";
-
+import CartProvider from "./context/CartProvider.jsx";
 function App() {
-  useEffect(() => {}, []);
   return (
+    <CartProvider>
+
     <div className="App">
       <BrowserRouter>
-        <NavBar />
         <ScrollToTop smooth color="#000" />
+        <NavBar />
         <Routes>
           <Route
             exact
@@ -31,35 +31,36 @@ function App() {
               </>
             }
             errorElement={<ErrorPage />}
-          />
+            />
           <Route
             exact
             path="/suplementos"
             element={<ItemListContainer />}
             errorElement={<ErrorPage />}
-          />
+            />
           <Route
             exact
             path="/suplementos/:categoria"
             element={<ItemListContainer />}
             errorElement={<ErrorPage />}
-          />
+            />
           <Route
             exact
             path="/marcas/:brand"
             element={<Marcas />}
             errorElement={<ErrorPage />}
-          />
+            />
 
           <Route
             exact
             path="/item/:id"
             element={<ItemDetailContainer />}
             errorElement={<ErrorPage />}
-          />
+            />
         </Routes>
       </BrowserRouter>
     </div>
+  </CartProvider>
   );
 }
 

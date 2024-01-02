@@ -1,48 +1,72 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { toCapital } from "../helpers/toCapital";
 import "./index.css";
 import { Button } from "../../Button/Button";
 import { Link } from "react-router-dom";
-import SvgCart from "../SvgCart/SvgCart";
-import { Text } from "../Text/Text.jsx";
 import DescriptionViewer from "../helpers/DescriptionViewer.jsx";
+import ItemCount from "../ItemCount/ItemCount.jsx"
+import { CartContext } from "../../context/CartProvider.jsx";
 
 const ItemDetail = ({ productos }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, [productos]);
 
-  const [quantity, setQuantity] = useState(0);
+  const [cart, setCart] = useContext(CartContext);
+
+  const [quantity, setQuantity] = useState(1);
+
+  const onAdd = (quantity) => {
+    console.log(`Compraste ${quantity} unidades`);
+  };
+
+  if (quantity > productos.stock || quantity === 0) {
+    alert(`Solo hay ${productos.stock} unidades disponibles`);
+    setQuantity(1);
+  }
 
   return (
     <main className="container">
       <section className="product-image_container">
-        <h1 className="name">
-          {productos.name}
-          <Link to={toCapital(productos.brand)} />
-        </h1>
+        <h1 className="name">{productos.name}</h1>
+        <Link to={`/marcas/${productos.brand}`} className="brand-link">
+          {productos.brand}
+        </Link>
         <div className="image-buttons">
           <img
             className="product-image"
             src={productos.thumbnail}
             alt={productos.name}
           />
-          <p className="price">
-            <b>${productos.price[0]}</b>
-          </p>
-          <form action="" className="quantity-container">
-            <label htmlFor="quantity">Elegir cantidad:</label>
+          <h2 className="price">
+            <b>${productos.price[0] * quantity}</b>
+          </h2>
+          <form
+            className="quantity-container"
+            onSubmit={(ev) => {
+              ev.preventDefault();
+            }}
+          >
+            <label htmlFor="quantity" className="quantity">
+              <h4>Elegir cantidad:</h4>
+            </label>
             <input
               type="number"
               name="quantity"
-              id="quantity"
               min={1}
-              max={5}
+              max={productos.stock}
+              value={quantity}
               required
+              onChange={(ev) => setQuantity(ev.target.value)}
             />
           </form>
-          <Button text="Comprar" />
-          <Button text="Agregar al carrito" icon={<SvgCart />}></Button>
+          <p style={{ textAlign: "center" }}>
+            Stock disponible: {productos.stock}
+          </p>
+          <Button onClick={() => {
+            
+          }} text="Comprar" />
+          <ItemCount initial={1} stock={productos.stock} onAdd={onAdd} />
         </div>
       </section>
       <section className="product-detail">
@@ -63,14 +87,16 @@ const ItemDetail = ({ productos }) => {
             <hr />
 
             <p>Stock: {productos.stock}</p>
+            <hr />
           </div>
         </article>
-        <article className="description-text">
-          <h4>Descripcion</h4>
+        <article className="description-container">
+          <h4 className="description-text">DESCRIPCIÓN:</h4>
           <DescriptionViewer jsonData={productos} />
         </article>
       </section>
-    </main>
+{/*       {goToCart ? <Link to="/carrito">Terminar compra</Link> : false}
+ */}    </main>
   );
 };
 

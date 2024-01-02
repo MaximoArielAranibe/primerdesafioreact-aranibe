@@ -2,8 +2,11 @@ svg {
   margin: 0;
 }
 
+a{
+  cursor: pointer;
+}
+
 .container {
-  margin: 1rems;
   width: 100%;
   display: flex;
   flex-flow: column wrap;
@@ -19,6 +22,13 @@ svg {
   max-width: fit-content;
   line-break: loose;
   margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.brand-link{
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  color: #00ffee;
 }
 
 .product-image_container {
@@ -32,7 +42,7 @@ svg {
 .product-image {
   width: 250px;
   height: 250px;
-  margin: 1rem 0 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .price {
@@ -41,6 +51,10 @@ svg {
 
 .quantity-container {
   margin-top: 0.5rem;
+}
+
+.quantity {
+  margin-right: 0.2rem;
 }
 
 .product-detail {
@@ -62,22 +76,36 @@ svg {
   margin: 1rem;
 }
 
-.description-text {
-  margin: 1rem;
+.description-container {
+  margin: 2rem 0;
+}
+
+.description-text{
+  margin-bottom: 1rem;
+  margin: 2rem 0;
 }
 
 .description {
-  text-align: justify;
+  white-space: pre-wrap;
+  text-align:center ;
   color: rgb(0, 0, 0);
   background-color: dark;
   padding: 0.5rem;
-  border: 2px solid #00ffee;
   border-radius: 0.4rem;
   font-size: medium;
-  margin-bottom: 1rem;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 500;
+  margin-bottom: 2rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;
 }
 
-.category {
+.description:nth-child(odd) {
+  border: 2px solid #00ffee;
 }
+
+.description:nth-child(even){
+  border: 2px solid #000000;
+}
+
+
+
