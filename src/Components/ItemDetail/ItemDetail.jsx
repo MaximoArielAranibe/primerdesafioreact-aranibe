@@ -1,26 +1,25 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { toCapital } from "../helpers/toCapital";
 import "./index.css";
-import { Button } from "../../Button/Button";
+import { Button } from "../Button/Button.jsx";
 import { Link } from "react-router-dom";
 import DescriptionViewer from "../helpers/DescriptionViewer.jsx";
-import ItemCount from "../ItemCount/ItemCount.jsx"
-import { CartContext } from "../../context/CartProvider.jsx";
+import { useCart } from "../../context/CartProvider.jsx";
 
 const ItemDetail = ({ productos }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [productos]);
 
-  const [cart, setCart] = useContext(CartContext);
-
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
 
-  const onAdd = (quantity) => {
-    console.log(`Compraste ${quantity} unidades`);
+  const handleBuy = () => {
+    addToCart(productos);
+    console.log(productos);
   };
 
-  if (quantity > productos.stock || quantity === 0) {
+  if (quantity > productos.stock) {
     alert(`Solo hay ${productos.stock} unidades disponibles`);
     setQuantity(1);
   }
@@ -41,32 +40,11 @@ const ItemDetail = ({ productos }) => {
           <h2 className="price">
             <b>${productos.price[0] * quantity}</b>
           </h2>
-          <form
-            className="quantity-container"
-            onSubmit={(ev) => {
-              ev.preventDefault();
-            }}
-          >
-            <label htmlFor="quantity" className="quantity">
-              <h4>Elegir cantidad:</h4>
-            </label>
-            <input
-              type="number"
-              name="quantity"
-              min={1}
-              max={productos.stock}
-              value={quantity}
-              required
-              onChange={(ev) => setQuantity(ev.target.value)}
-            />
-          </form>
+
           <p style={{ textAlign: "center" }}>
             Stock disponible: {productos.stock}
           </p>
-          <Button onClick={() => {
-            
-          }} text="Comprar" />
-          <ItemCount initial={1} stock={productos.stock} onAdd={onAdd} />
+          <Button onClick={() => handleBuy()} text="Comprar" />
         </div>
       </section>
       <section className="product-detail">
@@ -95,8 +73,9 @@ const ItemDetail = ({ productos }) => {
           <DescriptionViewer jsonData={productos} />
         </article>
       </section>
-{/*       {goToCart ? <Link to="/carrito">Terminar compra</Link> : false}
- */}    </main>
+      {/*       {goToCart ? <Link to="/carrito">Terminar compra</Link> : false}
+       */}{" "}
+    </main>
   );
 };
 

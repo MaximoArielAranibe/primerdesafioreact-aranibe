@@ -1,0 +1,12 @@
+.cart-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}

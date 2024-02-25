@@ -2,10 +2,18 @@ import React from "react";
 import "./Item.css";
 import { Link } from "react-router-dom";
 import { capitalize } from "@mui/material";
-import { Button } from "../../Button/Button";
-
+import { Button } from "../Button/Button";
+import { useCart } from "../../context/CartProvider";
 
 const Item = ({ producto }) => {
+
+  const handleBuy = () => {
+    addToCart(producto);
+    console.log(producto);
+  };
+
+  const { addToCart } = useCart();
+
   return (
     <article className="product_container">
       <div className="image_container">
@@ -43,6 +51,7 @@ const Item = ({ producto }) => {
         <Link to={`/item/${producto.id}`}>
           <Button text="Ver mas sobre este producto" />
         </Link>
+        <Button onClick={() => handleBuy()} text="Comprar producto"/>
       </div>
     </article>
   );

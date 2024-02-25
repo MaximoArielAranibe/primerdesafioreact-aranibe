@@ -1,12 +1,12 @@
 import React from "react";
 import "./index.css";
 
-export const Button = (props) => {
+export const Button = ({text,icon, ...props}) => {
   return (
     <div className="product_button_container">
-      <button className="product_button">
-        {props.text}
-        {props.icon}
+      <button className="product_button" {...props}>
+        {text}
+        {icon}
       </button>
     </div>
   );

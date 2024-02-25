@@ -16,7 +16,6 @@ export const ItemDetailContainer = () => {
   }, [id]);
 
   return <div>{item && <ItemDetail productos={item} />}</div>;
-
 };
 
 export default ItemDetailContainer;

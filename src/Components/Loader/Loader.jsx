@@ -8,10 +8,9 @@ const Loader = () => {
         setTimeout(() => {
           setLoading(false)
         },2000);
-        
     }
   return (
-    <div>Loader</div>
+    <div>Cargando...</div>
   )
 }
 
