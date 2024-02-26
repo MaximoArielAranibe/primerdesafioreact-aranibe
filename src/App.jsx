@@ -27,7 +27,6 @@ function App() {
   return (
     <CartProvider>
       <div className="App">
-        <button onClick={notify}>Make me a toast</button>
         <BrowserRouter>
           <ScrollToTop smooth color="#000" />
           <NavBar />

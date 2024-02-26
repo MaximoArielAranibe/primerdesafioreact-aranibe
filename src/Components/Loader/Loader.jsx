@@ -1,17 +1,12 @@
-import React, { useState } from 'react'
+import React from "react";
+import './loader.css';
 
 const Loader = () => {
-    const [loading, setLoading] = useState(false);
-
-    const cambiarEstado=()=>{
-        setLoading(true);
-        setTimeout(() => {
-          setLoading(false)
-        },2000);
-    }
   return (
-    <div>Cargando...</div>
-  )
-}
+    <div className="spinner-overlay">
+      <div className="spinner"></div>
+    </div>
+  );
+};
 
-export default Loader
+export default Loader;
