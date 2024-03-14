@@ -2,13 +2,26 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import Logo from "./icons8-deadlift-50.png";
 import SvgCart from "../SvgCart/SvgCart.jsx";
+import { useCart } from "../../context/CartProvider.jsx";
 
 const NavBar = () => {
+  const { total } = useCart();
+
+  const TotalCart = () => {
+    return (
+      <div className="total__container">
+        <h1 className="total">{total}</h1>
+      </div>
+    );
+  };
+
   return (
     <nav className="navbar_container">
       <div className="left-side">
         <ul className="navbar_list">
-          <Link to="/"><img src={Logo} alt="Logo" className="logo" /></Link>
+          <Link to="/">
+            <img src={Logo} alt="Logo" className="logo" />
+          </Link>
           <li className="navbar_category">
             <Link to="/" className="navbar_category-link">
               INICIO
@@ -83,7 +96,14 @@ const NavBar = () => {
         <Link to="/carrito" className="navbar_category-link">
           CARRITO
         </Link>
-        <SvgCart />
+        <div className="carrito-wrapper">
+          <Link to="/carrito"><SvgCart/></Link>
+          {total >= 1 ? (
+            <TotalCart />
+          ) : (
+            <span style={{ display: "none" }}>{total}</span>
+          )}
+        </div>
       </div>
     </nav>
   );

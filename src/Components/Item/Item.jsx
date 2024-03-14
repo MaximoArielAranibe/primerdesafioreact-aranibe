@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 import { capitalize } from "@mui/material";
 import { Button } from "../Button/Button";
 import { useCart } from "../../context/CartProvider";
-
+import toast from "react-hot-toast";
 const Item = ({ producto }) => {
+  const { addToCart } = useCart();
 
   const handleBuy = () => {
     addToCart(producto);
-    console.log(producto);
+    toast.success("Has agregado un producto al carrito", {
+      position: "bottom-center",
+    });
   };
-
-  const { addToCart } = useCart();
 
   return (
     <article className="product_container">
@@ -51,7 +52,7 @@ const Item = ({ producto }) => {
         <Link to={`/item/${producto.id}`}>
           <Button text="Ver mas sobre este producto" />
         </Link>
-        <Button onClick={() => handleBuy()} text="Comprar producto"/>
+        <Button onClick={() => handleBuy()} text="Comprar producto" />
       </div>
     </article>
   );

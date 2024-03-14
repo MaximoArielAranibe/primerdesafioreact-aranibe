@@ -11,10 +11,9 @@ import ScrollToTop from "react-scroll-to-top";
 import Marcas from "./Components/Marcas/Marcas";
 import CartProvider from "./context/CartProvider.jsx";
 import Carrito from "./Components/Carrito/Carrito.jsx";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import Loader from "./Components/Loader/Loader.jsx";
 
-const notify = () => toast.success("Has agregado un producto al carrito");
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -23,7 +22,10 @@ function App() {
     setTimeout(() => {
       setLoading(false);
     }, 3000);
-  }, []);
+  },[]);
+  
+
+  
   return (
     <CartProvider>
       <div className="App">
