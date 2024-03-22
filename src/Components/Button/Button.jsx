@@ -1,10 +1,10 @@
 import React from "react";
 import "./index.css";
 
-export const Button = ({text,icon, ...props}) => {
+export const Button = ({ text, icon, ...props }) => {
   return (
-    <div className="product_button_container">
-      <button className="product_button" {...props}>
+    <div className="button__container">
+      <button className="button__product" {...props}>
         {text}
         {icon}
       </button>

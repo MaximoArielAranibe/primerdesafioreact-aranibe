@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useCart } from "../../context/CartProvider";
 import "./carrito.css";
 
 const Carrito = () => {
-  const { cart, clearCart, removeItem, calculateTotal, addItem, total } = useCart();
+  const { cart, clearCart, removeItem, calculateTotal, addItem, total } =
+    useCart();
 
-  useEffect(()=>{
-  },[])
-  
   return (
     <header className="cart__container">
       <h1 className="cart__title">Mi carrito</h1>
@@ -34,10 +32,7 @@ const Carrito = () => {
               >
                 -
               </button>
-              <button
-                className="item__button"
-                onClick={() => addItem(item.id)}
-              >
+              <button className="item__button" onClick={() => addItem(item.id)}>
                 +
               </button>
             </li>

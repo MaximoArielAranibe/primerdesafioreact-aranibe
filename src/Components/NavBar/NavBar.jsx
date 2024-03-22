@@ -5,12 +5,12 @@ import SvgCart from "../SvgCart/SvgCart.jsx";
 import { useCart } from "../../context/CartProvider.jsx";
 
 const NavBar = () => {
-  const { total } = useCart();
+  const { totalQuantity } = useCart();
 
   const TotalCart = () => {
     return (
       <div className="total__container">
-        <h1 className="total">{total}</h1>
+        <h1 className="total">{totalQuantity}</h1>
       </div>
     );
   };
@@ -98,10 +98,10 @@ const NavBar = () => {
         </Link>
         <div className="carrito-wrapper">
           <Link to="/carrito"><SvgCart/></Link>
-          {total >= 1 ? (
+          {totalQuantity >= 1 ? (
             <TotalCart />
           ) : (
-            <span style={{ display: "none" }}>{total}</span>
+            <span style={{ display: "none" }}>{totalQuantity}</span>
           )}
         </div>
       </div>

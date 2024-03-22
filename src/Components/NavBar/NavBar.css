@@ -111,25 +111,23 @@ a {
 }
 
 .total__container {
-  width: 12px;
-  height: 14px;
   position: absolute;
-  color: black;
+  color: darkviolet;
   border: solid 1px #32c2b9;
   border-radius: 100%;
   background: yellow;
-  top: -35%;
+  top: -25%;
   right: -8%;
   text-align: center;
   animation: shake 0.5s;
   display: flex;
-  flex-flow: row wrap;
-}
+  flex-flow: row wrap;}
 
 .total{
-  font-size: 0.7rem;
+  font-size: 0.58rem;
   width: 100%;
   height: 100%;
+  margin-left: 0.05rem;
 }
 
 @keyframes shake {

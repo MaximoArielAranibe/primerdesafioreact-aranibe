@@ -5,6 +5,7 @@ import { capitalize } from "@mui/material";
 import { Button } from "../Button/Button";
 import { useCart } from "../../context/CartProvider";
 import toast from "react-hot-toast";
+
 const Item = ({ producto }) => {
   const { addToCart } = useCart();
 
@@ -49,10 +50,12 @@ const Item = ({ producto }) => {
             <span className="product_old_price">${producto.price[1]}</span>
           )}
         </div>
-        <Link to={`/item/${producto.id}`}>
+        <Link className="link__item" to={`/item/${producto.id}`}>
           <Button text="Ver mas sobre este producto" />
         </Link>
-        <Button onClick={() => handleBuy()} text="Comprar producto" />
+        <div className="link__item">
+          <Button onClick={() => handleBuy()} text="Comprar producto" />
+        </div>
       </div>
     </article>
   );

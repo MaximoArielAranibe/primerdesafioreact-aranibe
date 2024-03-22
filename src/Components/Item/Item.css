@@ -6,15 +6,15 @@ a {
   align-items: center;
   flex-flow: column wrap;
   text-align: center;
-  background-color: rgb(255, 255, 255);
-  margin-top: 3rem;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
   padding-bottom: 1rem;
-  width: 75%;
+  width: 50%;
   min-width: 200px;
-  max-width: 400px;
+  max-width: 350px;
+  margin-bottom: 3rem;
 }
 
 .product_container:hover {
@@ -39,21 +39,19 @@ a {
 
 .product_brand {
   margin-top: 1rem;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .product_link-category:hover {
   color: rgb(68, 0, 153);
 }
 
-.product_name-container {
-  min-height: max-content;
-}
-
 .product_name {
   color: rgb(0, 0, 0);
   text-align: center;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.56;
   letter-spacing: -0.3px;
   padding: 0 1rem 0;
@@ -64,32 +62,39 @@ a {
   flex-direction: row;
   place-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .product_price {
   /* line-height: 1.56; */
   letter-spacing: -0.32px;
-  font-size: 1.8rem;
+  font-size: 24px;
   margin-right: 0.5rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .product_old_price {
   text-decoration: line-through;
-  font-weight: 500;
-  font-size: 1.4rem;
+  font-weight: 400;
+  font-size: 16px;
   color: rgb(136, 136, 136);
+  cursor: pointer;
 }
 
-.product_button_container {
-  position: relative;
+.link__item {
   width: 100%;
-  margin-top: 1rem;
+  padding: 0 1rem;
 }
+
 
 @media (min-width: 576px) {
+  .product_container{
+    margin-bottom: 0;
+  }
+
   .product_name-container {
-    min-height: 75px;
+    min-height: 50px;
     display: flex;
     justify-content: center;
     place-items: center;
