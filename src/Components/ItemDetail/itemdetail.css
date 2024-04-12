@@ -1,123 +1,46 @@
-a {
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
-
-svg {
-  margin: 0;
-}
-
 .itemdetail__container {
   width: 100%;
+  height: 100%;
+  font-size: 16px;
   display: flex;
-  flex-flow: column wrap;
-  text-align: center;
-}
-
-.itemdetail__card {
-  display: flex;
-  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 }
 
-.itemdetail__name {
-  font-family: "Lucida Sans", "Lucida Sans Regular", sans-serif;
-  font-weight: 900;
-  max-width: fit-content;
-  line-break: loose;
-  margin-top: 1.5rem;
-  color: #352e2e;
-  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc,
-    1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee,
-    4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc,
-    4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
-    7px 6px 1px #cccccc;
-  letter-spacing: 1px;
-}
-
-.itemdetail__brand {
-  text-transform: uppercase;
-  color: #00ffee;
-  cursor: pointer;
-  margin: 0.4rem;
-  font-family: monospace;
-}
-
-.itemdetail__brand--link:hover {
-  transition: 0.5s;
-  color: darkviolet;
-}
-
-.itemdetail__wrapper {
-  width: 100%;
+.itemdetail {
+  width: 80%;
   height: 100%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 32px;
+}
+
+.itemdetail__img__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .itemdetail__img {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 1rem;
-}
-
-.itemdetail__price {
-  font-size: x-large;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.itemdetail__stock {
-  font-family: monospace;
-  margin: 0.5rem;
-}
-
-.itemdetail__caracteristicas {
-  font-size: 16px;
-  line-break: normal;
-  margin-top: 1rem;
-}
-
-.itemdetail__caracteristicas__title {
-  font-size: larger;
-  padding: 1rem;
-  margin: 0 1.2rem;
-  border: #00ffee 2px solid;
-  border-radius: 1rem 2rem 1rem 2rem;
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  height: 100%;
 }
 
 .itemdetail__info {
-  text-align: left;
-  margin: 1rem;
+  width: 100%;
+  padding: 24px;
 }
 
-.itemdetail__description {
-  margin-bottom: 1rem;
-  margin: 2rem 0;
-  font-size: larger;
-  text-align: center;
-}
+.description__container {}
 
-.description {
-  text-align: start;
-  color: rgb(0, 0, 0);
-  background-color: dark;
-  padding: 1.2rem;
-  margin: 1rem 1rem;
-  border-radius: 0.4rem;
-  font-size: 16px;
-  margin-bottom: 2rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+.description__item {}
 
-.description:nth-child(odd) {
-  border: 2px solid #00ffee;
-}
+.price__button__wrapper {}
 
-.description:nth-child(even) {
-  border: 2px solid #000000;
-}
+.itemdetail__price {}
+
+.itemdetail__button {}

@@ -13,6 +13,8 @@ const ItemDetail = ({ productos }) => {
   }, [productos]);
 
   const { addToCart } = useCart();
+  const { id, name, category, brand, weigth, description, price, stock, thumbnail } = productos;
+
 
   const handleBuy = () => {
     addToCart(productos);
@@ -23,44 +25,28 @@ const ItemDetail = ({ productos }) => {
 
   return (
     <main className="itemdetail__container">
-      <section className="itemdetail__card">
-        <h1 className="itemdetail__name">{productos.name}</h1>
-        <Link className="itemdetail__brand" to={`/marcas/${productos.brand}`}>
-          <span className="itemdetail__brand--link">{productos.category}</span>{" "}
-          / <span className="itemdetail__brand--link">{productos.brand}</span>
-        </Link>
-        <img
-          className="itemdetail__img"
-          src={productos.thumbnail}
-          alt={productos.name}
-        />
-        <h2 className="itemdetail__price">
-          <b>${productos.price[0]}</b>
-        </h2>
-        <p className="itemdetail__stock" style={{ textAlign: "center" }}>
-          Stock disponible: {productos.stock}
-        </p>
-        <Button onClick={() => handleBuy()} text="Agregar al carrito" />
-      </section>
-      <section className="itemdetail__caracteristicas">
-        <h4 className="itemdetail__caracteristicas__title">
-          Características del producto
-        </h4>
-        <div className="itemdetail__info">
-          <p>Producto: {productos.name}</p>
-          <hr />
-          <p>Marca: {toCapital(productos.brand)}</p>
-          <hr />
-
-          <p>Categoria: {toCapital(productos.category)}</p>
-          <hr />
-
-          <p>Peso: {productos.weigth}</p>
-          <hr />
-          <h4 className="itemdetail__description">DESCRIPCIÓN:</h4>
-          <DescriptionViewer jsonData={productos} />
+      <article className="itemdetail">
+        <div className="itemdetail__img__container">
+          <img className="itemdetail__img" src={thumbnail} alt={name} />
         </div>
-      </section>
+
+        <div className="itemdetail__info">
+          <Link to={`/marcas/${brand}`}>
+            <span>{category}</span>{" "}
+            / <span>{brand}</span>
+          </Link>
+          <h1>{name}<span>{weigth}</span></h1>
+          <ul className="description__container">
+            {description.map((descriptionItem) => {
+              return <li key={id} className="description__item">{descriptionItem}{" "}</li>
+            })}
+          </ul>
+          <div className="price__button__wrapper">
+            <p className="itemdetail__price">{price[0]}</p>
+            <Button onClick={handleBuy} className="itemdetail__button" key={id} text="Comprar ahora"></Button>
+          </div>
+        </div>
+      </article>
     </main>
   );
 };

@@ -5,19 +5,16 @@ import SvgCart from "../SvgCart/SvgCart.jsx";
 import { useCart } from "../../context/CartProvider.jsx";
 
 const NavBar = () => {
-  const { totalQuantity } = useCart();
+  const { totalCart } = useCart();
 
   const TotalCart = () => {
     return (
-      <div className="total__container">
-        <h1 className="total">{totalQuantity}</h1>
-      </div>
+      <h1 className="total">{totalCart()}</h1>
     );
   };
 
   return (
-    <nav className="navbar_container">
-      <div className="left-side">
+    <nav className="navbar__container">
         <ul className="navbar_list">
           <Link to="/">
             <img src={Logo} alt="Logo" className="logo" />
@@ -90,20 +87,13 @@ const NavBar = () => {
             </ul>
           </li>
         </ul>
-      </div>
 
-      <div className="rigth-side carrito">
+      <div className="rigthside">
         <Link to="/carrito" className="navbar_category-link">
-          CARRITO
-        </Link>
-        <div className="carrito-wrapper">
-          <Link to="/carrito"><SvgCart/></Link>
-          {totalQuantity >= 1 ? (
-            <TotalCart />
-          ) : (
-            <span style={{ display: "none" }}>{totalQuantity}</span>
-          )}
-        </div>
+            CARRITO
+              <SvgCart />
+            {totalCart() > 0 && <TotalCart />}
+            </Link>          
       </div>
     </nav>
   );
