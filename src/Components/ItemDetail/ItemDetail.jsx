@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { toCapital } from "../helpers/toCapital";
-import { Button } from "../Button/Button.jsx";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DescriptionViewer from "../helpers/DescriptionViewer.jsx";
 import { useCart } from "../../context/CartProvider.jsx";
@@ -15,6 +13,18 @@ const ItemDetail = ({ productos }) => {
   const { addToCart } = useCart();
   const { id, name, category, brand, weigth, description, price, stock, thumbnail } = productos;
 
+  const Description = () => {
+    return (
+      <>
+        {description.slice(0, 2).map((descriptionItem, index) => (
+          <li key={index} className="description__item">
+            {descriptionItem}
+          </li>
+        ))}
+      </>
+    );
+  };
+
 
   const handleBuy = () => {
     addToCart(productos);
@@ -26,26 +36,31 @@ const ItemDetail = ({ productos }) => {
   return (
     <main className="itemdetail__container">
       <article className="itemdetail">
-        <div className="itemdetail__img__container">
+        <header className="itemdetail__img__container">
           <img className="itemdetail__img" src={thumbnail} alt={name} />
-        </div>
-
-        <div className="itemdetail__info">
-          <Link to={`/marcas/${brand}`}>
-            <span>{category}</span>{" "}
-            / <span>{brand}</span>
+        </header>
+        <section className="itemdetail__info">
+          <Link className="itemdetail__wrapper" to={`/marcas/${brand}`}>
+            <div>
+              <span>{category}</span> {" / "}
+              <span>{brand}</span>
+            </div>
+            <span>{weigth}</span>
           </Link>
-          <h1>{name}<span>{weigth}</span></h1>
-          <ul className="description__container">
-            {description.map((descriptionItem) => {
-              return <li key={id} className="description__item">{descriptionItem}{" "}</li>
-            })}
-          </ul>
+          <h1 className="itemdetail__name">{name}</h1>
+          <div>
+            <ul className="description__container">
+              <Description />
+              <span className="viewmore">Ver mas</span>
+            </ul>
+          </div>
           <div className="price__button__wrapper">
             <p className="itemdetail__price">{price[0]}</p>
-            <Button onClick={handleBuy} className="itemdetail__button" key={id} text="Comprar ahora"></Button>
+            <button onClick={handleBuy} className="itemdetail__button" key={id}>
+              Comprar ahora
+            </button>
           </div>
-        </div>
+        </section>
       </article>
     </main>
   );
