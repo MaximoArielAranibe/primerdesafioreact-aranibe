@@ -4,6 +4,9 @@ import DescriptionViewer from "../helpers/DescriptionViewer.jsx";
 import { useCart } from "../../context/CartProvider.jsx";
 import toast from "react-hot-toast";
 import "./itemdetail.css";
+import { Button } from '../Button/Button.jsx'
+import SvgCart from "../SvgCart/SvgCart.jsx";
+
 
 const ItemDetail = ({ productos }) => {
   useEffect(() => {
@@ -12,6 +15,9 @@ const ItemDetail = ({ productos }) => {
 
   const { addToCart } = useCart();
   const { id, name, category, brand, weigth, description, price, stock, thumbnail } = productos;
+  const Tab = () => <>&nbsp;</>;
+
+  const [viewMore, setViewMore] = useState(false);
 
   const Description = () => {
     return (
@@ -21,6 +27,14 @@ const ItemDetail = ({ productos }) => {
             {descriptionItem}
           </li>
         ))}
+        {viewMore ?
+          (<>
+            {description.slice(2, description.length).map((descriptionItem, index) => (
+              <li key={index} className="description__item">
+                {descriptionItem}
+              </li>))}
+          </>)
+          : ""}
       </>
     );
   };
@@ -34,31 +48,36 @@ const ItemDetail = ({ productos }) => {
   };
 
   return (
-    <main className="itemdetail__container">
-      <article className="itemdetail">
-        <header className="itemdetail__img__container">
-          <img className="itemdetail__img" src={thumbnail} alt={name} />
+    <main className="itemdetail">
+      <article className="itemdetail__article">
+        <header className="itemdetail__header">
+          <img className="itemdetail__image" src={thumbnail} alt={name} />
         </header>
-        <section className="itemdetail__info">
-          <Link className="itemdetail__wrapper" to={`/marcas/${brand}`}>
-            <div>
-              <span>{category}</span> {" / "}
-              <span>{brand}</span>
-            </div>
+        <section className="itemdetail__content">
+          <div className="itemdetail__brand-info">
+            <Link className="itemdetail__brand" to={`/marcas/${brand}`}>
+              <span className="hover__underline__animation">{brand}</span>
+            </Link>
+            <Tab />
+            {"/"}
+            <Tab />
+            <Link className="itemdetail__category" to={`/suplementos/${category}`}>
+              <span className="hover__underline__animation">{category}</span>
+            </Link>
             <span>{weigth}</span>
-          </Link>
+          </div>
+
           <h1 className="itemdetail__name">{name}</h1>
           <div>
-            <ul className="description__container">
+
+            <ul className="itemdetail__description">
               <Description />
-              <span className="viewmore">Ver mas</span>
+              <div className="itemdetail__view-more" onClick={(() => setViewMore(!viewMore))}>{viewMore ? (<span className="hover__underline__animation--reverse">Ver menos</span>) : (<span className="hover__underline__animation">Ver más</span>)}</div>
             </ul>
           </div>
-          <div className="price__button__wrapper">
-            <p className="itemdetail__price">{price[0]}</p>
-            <button onClick={handleBuy} className="itemdetail__button" key={id}>
-              Comprar ahora
-            </button>
+          <div className="itemdetail__price-actions">
+            <p className="itemdetail__price">${price[0]}</p>
+            <Button icon={<SvgCart/>} className="itemdetail__button" text="Agregar al carrito" onClick={handleBuy} key={id} />
           </div>
         </section>
       </article>

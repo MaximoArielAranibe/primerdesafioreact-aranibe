@@ -11,7 +11,8 @@ export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    pedirItemPorId(Number(id)).then((res) => {
+    pedirItemPorId(Number(id))
+    .then((res) => {
       setItem(res);
       setTimeout(() => {
         setLoading(false);
