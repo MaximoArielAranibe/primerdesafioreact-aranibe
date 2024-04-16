@@ -21,7 +21,9 @@ export const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <div>{loading ? <Loader /> : item && <ItemDetail productos={item} />}</div>
+    <>
+    {loading ? <Loader /> : item && <ItemDetail productos={item} />}
+    </>
   );
 };
 

@@ -50,9 +50,10 @@ const ItemDetail = ({ productos }) => {
   return (
     <main className="itemdetail">
       <article className="itemdetail__article">
-        <header className="itemdetail__header">
+        <div className="itemdetail__header">
           <img className="itemdetail__image" src={thumbnail} alt={name} />
-        </header>
+        </div>
+
         <section className="itemdetail__content">
           <div className="itemdetail__brand-info">
             <Link className="itemdetail__brand" to={`/marcas/${brand}`}>
@@ -66,18 +67,14 @@ const ItemDetail = ({ productos }) => {
             </Link>
             <span>{weigth}</span>
           </div>
-
           <h1 className="itemdetail__name">{name}</h1>
-          <div>
-
-            <ul className="itemdetail__description">
-              <Description />
-              <div className="itemdetail__view-more" onClick={(() => setViewMore(!viewMore))}>{viewMore ? (<span className="hover__underline__animation--reverse">Ver menos</span>) : (<span className="hover__underline__animation">Ver más</span>)}</div>
-            </ul>
-          </div>
+          <ul className="itemdetail__description">
+            <Description />
+            <div className="itemdetail__view-more" onClick={(() => setViewMore(!viewMore))}>{viewMore ? (<span className="hover__underline__animation--reverse">Ver menos</span>) : (<span className="hover__underline__animation">Ver más</span>)}</div>
+          </ul>
           <div className="itemdetail__price-actions">
             <p className="itemdetail__price">${price[0]}</p>
-            <Button icon={<SvgCart/>} className="itemdetail__button" text="Agregar al carrito" onClick={handleBuy} key={id} />
+            <Button icon={<SvgCart />} className="itemdetail__button" text="Agregar al carrito" onClick={handleBuy} key={id} />
           </div>
         </section>
       </article>
