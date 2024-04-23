@@ -15,17 +15,19 @@ import { Toaster } from "react-hot-toast";
 import Loader from "./Components/Loader/Loader.jsx";
 
 
+
 function App() {
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 3000);
-  },[]);
-  
+  }, []);
 
-  
+
+
   return (
     <CartProvider>
       <div className="App">

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import DescriptionViewer from "../helpers/DescriptionViewer.jsx";
 import { useCart } from "../../context/CartProvider.jsx";
 import toast from "react-hot-toast";
 import "./itemdetail.css";
@@ -55,23 +54,25 @@ const ItemDetail = ({ productos }) => {
         </div>
 
         <section className="itemdetail__content">
-          <div className="itemdetail__brand-info">
-            <Link className="itemdetail__brand" to={`/marcas/${brand}`}>
-              <span className="hover__underline__animation">{brand}</span>
-            </Link>
-            <Tab />
-            {"/"}
-            <Tab />
-            <Link className="itemdetail__category" to={`/suplementos/${category}`}>
-              <span className="hover__underline__animation">{category}</span>
-            </Link>
-            <span>{weigth}</span>
+          <div>
+            <div className="itemdetail__brand-info">
+              <Link className="itemdetail__brand" to={`/marcas/${brand}`}>
+                <span className="hover__underline__animation">{brand}</span>
+              </Link>
+              <Tab />
+              {"/"}
+              <Tab />
+              <Link className="itemdetail__category" to={`/suplementos/${category}`}>
+                <span className="hover__underline__animation">{category}</span>
+              </Link>
+              <span>{weigth}</span>
+            </div>
+            <h1 className="itemdetail__name">{name}</h1>
+            <ul className="itemdetail__description">
+              <Description />
+              <div className="itemdetail__view-more" onClick={(() => setViewMore(!viewMore))}>{viewMore ? (<span className="hover__underline__animation--reverse">Ver menos</span>) : (<span className="hover__underline__animation">Ver más</span>)}</div>
+            </ul>
           </div>
-          <h1 className="itemdetail__name">{name}</h1>
-          <ul className="itemdetail__description">
-            <Description />
-            <div className="itemdetail__view-more" onClick={(() => setViewMore(!viewMore))}>{viewMore ? (<span className="hover__underline__animation--reverse">Ver menos</span>) : (<span className="hover__underline__animation">Ver más</span>)}</div>
-          </ul>
           <div className="itemdetail__price-actions">
             <p className="itemdetail__price">${price[0]}</p>
             <Button icon={<SvgCart />} className="itemdetail__button" text="Agregar al carrito" onClick={handleBuy} key={id} />
