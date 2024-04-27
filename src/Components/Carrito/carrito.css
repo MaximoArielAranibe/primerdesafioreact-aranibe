@@ -14,7 +14,7 @@
   display: block;
 }
 
-.cart__title > svg {
+.cart__title>svg {
   border-bottom: 2px solid black;
   vertical-align: baseline;
 }
@@ -97,35 +97,39 @@
   background-color: #d32b2e;
 }
 
-.cart__list>p {
+.cart__list > p {
   text-align: right;
   margin-right: 5%;
   font-weight: 500;
 }
 
-.cart__list>p>span {
+.cart__list > p > span {
   font-weight: 400;
 }
 
-.cart__list>div {
+.cart__list > div {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
 }
 
-.cart__list>div>button {
+.cart__list > div >button {
   color: #fff;
   text-transform: uppercase;
-
-  font-family: ;
   width: 90%;
   padding: 4px;
   border: none;
   background-color: indigo;
   border-radius: 12px;
+  cursor: pointer;
 }
 
-.cart__list>div>button:first-of-type {
+.cart__list > div > button:first-of-type {
   margin-bottom: 8px;
+}
+
+.cart__actions > button:hover{
+  color: rgb(249, 249, 20);
+  transition: 0.5s ease;
 }

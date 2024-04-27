@@ -12,17 +12,17 @@ export const ItemDetailContainer = () => {
 
   useEffect(() => {
     pedirItemPorId(Number(id))
-    .then((res) => {
-      setItem(res);
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
-    });
+      .then((res) => {
+        setItem(res);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+      });
   }, [id]);
 
   return (
     <>
-    {loading ? <Loader /> : item && <ItemDetail productos={item} />}
+      {loading ? <Loader /> : item && <ItemDetail productos={item} />}
     </>
   );
 };

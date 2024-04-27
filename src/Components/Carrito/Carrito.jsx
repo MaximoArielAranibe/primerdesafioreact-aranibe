@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useCart } from "../../context/CartProvider";
 import "./carrito.css";
 import '../SvgCart/SvgCart.jsx'
 import SvgCart from "../SvgCart/SvgCart.jsx";
 import toast from "react-hot-toast";
-import emailjs from 'emailjs-com';
+import { ModalForm } from "../ModalForm/ModalForm.jsx";
 
 const Carrito = () => {
   const { cart, clearCart, removeItem, calculateTotal, addItem } =
     useCart();
-  emailjs.init('SAfLDKK81aknEdPMH');
-  const userEmail = 'darknesswong@gmail.com'
+
+  const separadorDeMiles = () => {
+    const resultadoString = calculateTotal().toString();
+    let resultado = "";
+    for (let i = 0; i < resultadoString.length; i++) {
+      resultado += resultadoString[i];
+      if ((resultadoString.length - i - 1) % 3 === 0 && i < resultadoString.length - 1) {
+        resultado += ".";
+      }
+    }
+    return resultado
+  }
+
 
   const handleRemoveItem = (item) => {
     removeItem(item.id);
@@ -22,48 +33,6 @@ const Carrito = () => {
     toast.success(`Has agregado una unidad: ${item.name}`,
       { position: "bottom-center" });
   };
-
-
-  const cartItemsEmail = cart.map((item) => {
-    return (
-      `${item.name} (${item.quantity} unidades) con un valor de ${(item.price[0] * item.quantity)}\n`
-    )
-  })
-
-  const sendEmail = () => {
-    const templateParams = {
-      from_name: 'darknesswong@gmail.com',
-      to_name: { userEmail },
-      message: `Tu carrito:
-        ${cartItemsEmail}
-        Total del carrito: $${Number(calculateTotal())}
-      Para finalizar la compra podes abonar en nuestro local fisico ubicado en "dirección imaginaria" o abonar por transferencia al cbu : "cbu imaginario" y una vez pagado enviar comprobante al +549********.
-        Muchas gracias!`
-    };
-
-    emailjs.send('service_36n7yza', 'template_7t9a78a', templateParams)
-      .then((response) => {
-        console.log('Email sent successfully!', response);
-      }, (error) => {
-        console.error('Error sending email:', error);
-      });
-  };
-
-  const separadorDeMiles = () => {
-    const resultadoString = calculateTotal().toString();
-    console.log(resultadoString);
-    let resultado = "";
-    for (let i = 0; i < resultadoString.length; i++) {
-      resultado += resultadoString[i];
-
-      if ((resultadoString.length - i - 1) % 3 === 0 && i < resultadoString.length - 1) {
-        resultado += ".";
-      }
-    }
-    return resultado
-  }
-  separadorDeMiles();
-
   return (
     <main className="cart__container">
       <h1 className="cart__title">CARRITO<SvgCart /></h1>
@@ -99,7 +68,7 @@ const Carrito = () => {
           ))}
           <p className="cart__total">Total: <span> ${separadorDeMiles()}</span></p>
           <div className="cart__actions">
-            <button onClick={sendEmail}>Comprar carrito</button>
+            <ModalForm />
             <button onClick={clearCart}>Vaciar carrito</button>
           </div>
         </ul>

@@ -15,7 +15,6 @@ import { Toaster } from "react-hot-toast";
 import Loader from "./Components/Loader/Loader.jsx";
 
 
-
 function App() {
   const [loading, setLoading] = useState(true);
 

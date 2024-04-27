@@ -7,7 +7,6 @@ const CartProvider = ({ children }) => {
 
   const [cart, setCart] = useState(storagedItems || []);
 
-  console.log(cart);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -69,7 +68,7 @@ const CartProvider = ({ children }) => {
   const calculateTotal = () => {
     return cart.reduce((total, item) => total + item.price[0] * item.quantity, 0);
   };
-  
+
 
   return (
     <CartContext.Provider value={{ cart, addToCart, removeItem, clearCart, calculateTotal, addItem, totalCart}}>
