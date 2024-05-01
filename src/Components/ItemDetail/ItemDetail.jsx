@@ -8,15 +8,21 @@ import SvgCart from "../SvgCart/SvgCart.jsx";
 
 
 const ItemDetail = ({ productos }) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [productos]);
-
+  const [viewMore, setViewMore] = useState(false);
   const { addToCart } = useCart();
   const { id, name, category, brand, weigth, description, price, stock, thumbnail } = productos;
   const Tab = () => <>&nbsp;</>;
 
-  const [viewMore, setViewMore] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [productos]);
+
+  const handleBuy = () => {
+    addToCart(productos);
+    toast.success("Has agregado un producto al carrito", {
+      position: "bottom-center",
+    });
+  };
 
   const Description = () => {
     return (
@@ -38,16 +44,9 @@ const ItemDetail = ({ productos }) => {
     );
   };
 
-
-  const handleBuy = () => {
-    addToCart(productos);
-    toast.success("Has agregado un producto al carrito", {
-      position: "bottom-center",
-    });
-  };
-
   return (
     <main className="itemdetail">
+      <h1> {">"} Detalles del producto</h1>
       <article className="itemdetail__article">
         <div className="itemdetail__header">
           <img className="itemdetail__image" src={thumbnail} alt={name} />

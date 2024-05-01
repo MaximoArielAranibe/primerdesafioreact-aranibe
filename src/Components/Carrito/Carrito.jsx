@@ -10,6 +10,17 @@ const Carrito = () => {
   const { cart, clearCart, removeItem, calculateTotal, addItem } =
     useCart();
 
+  const handleRemoveItem = (item) => {
+    removeItem(item.id);
+    toast.error(`Has eliminado una unidad: ${item.name}`, { position: "bottom-center" });
+  };
+
+  const handleAddItem = (item) => {
+    addItem(item.id);
+    toast.success(`Has agregado una unidad: ${item.name}`,
+      { position: "bottom-center" });
+  };
+
   const separadorDeMiles = () => {
     const resultadoString = calculateTotal().toString();
     let resultado = "";
@@ -22,17 +33,6 @@ const Carrito = () => {
     return resultado
   }
 
-
-  const handleRemoveItem = (item) => {
-    removeItem(item.id);
-    toast.error(`Has eliminado una unidad: ${item.name}`, { position: "bottom-center" });
-  };
-
-  const handleAddItem = (item) => {
-    addItem(item.id);
-    toast.success(`Has agregado una unidad: ${item.name}`,
-      { position: "bottom-center" });
-  };
   return (
     <main className="cart__container">
       <h1 className="cart__title">CARRITO<SvgCart /></h1>
@@ -55,24 +55,19 @@ const Carrito = () => {
                 <p className="item__quantity">Cantidad: <span>{item.quantity}</span></p>
                 <p className="item__price"><span>${item.price[0] * item.quantity}</span> ({item.price[0]})</p>
               </div>
-              <button
-                className="item__button"
-                onClick={() => handleRemoveItem(item)}
-              >
-                -
-              </button>
-              <button className="item__button" onClick={() => handleAddItem(item)}>
-                +
-              </button>
+              <div className="item__actions">
+                <button className="item__button" onClick={() => handleRemoveItem(item)}>-</button>
+                <button className="item__button" onClick={() => handleAddItem(item)}>+</button>
+              </div>
             </li>
           ))}
-          <p className="cart__total">Total: <span> ${separadorDeMiles()}</span></p>
-          <div className="cart__actions">
-            <ModalForm />
-            <button onClick={clearCart}>Vaciar carrito</button>
-          </div>
         </ul>
       )}
+        <p className="cart__total">Total: <span> ${separadorDeMiles()}</span></p>
+        <div className="cart__actions">
+          <ModalForm />
+          <button onClick={clearCart}>Vaciar carrito</button>
+      </div>
     </main>
   );
 };
