@@ -7,8 +7,8 @@
     "weigth": "930grs",
     "description": [
       "Whey Protein Isolate (WPI) es la forma más pura de proteína de suero que existe actualmente. Al sumarla a nuestra fórmula clásica (WPC + WPI) elevamos el estándar de calidad, asegurándote un mejor producto en cada scoop para que logres la performance que buscas.",
-      "TRUEMADE contiene un blend de máxima pureza con una rápida absorción y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular",
-      " Whey protein concentrate (WPC): perfil completo de aminoácidos esenciales, brindando la mejor calidad de proteínas para aumentar la energía durante el entrenamiento.",
+      "TRUEMADE contiene un blend de máxima pureza con una rápida absorción y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular.",
+      "Whey protein concentrate (WPC): perfil completo de aminoácidos esenciales, brindando la mejor calidad de proteínas para aumentar la energía durante el entrenamiento.",
       "Whey Protein Isolate (WPI): máxima pureza. Bajo en carbohidratos, grasas y fácil de digerir logrando una mayor absorción de la proteína."
     ],
     "price": [6000, 6500],
@@ -22,7 +22,7 @@
     "brand": "bodyadvance",
     "weigth": "350grs",
     "description": [
-      "La balanceada conjunción de sus materias primas hacen de BEAST BLOOD un producto pensado para entrenamientos de elite, deportistas que se exigen al máximo y necesitan un mayor rendimiento.",
+      "La balanceada conjunción de sus materias primas hacen de BEAST BLOOD un producto pensado para entrenamientos de élite, deportistas que se exigen al máximo y necesitan un mayor rendimiento.",
       "BEAST BLOOD Sangre de Bestia se gana su nombre gracias al efecto vasodilatador que logran sus principales componentes, para de esta forma llevar mayor oxigenación a los músculos y por ende nutrirlos y retrasar el fallo muscular.",
       "La sinergia entre sus diversas materias primas, cuidadosamente seleccionadas para lograr dicho efecto, hacen de BEAST BLOOD el producto indicado para lograr esa explosión de poder con músculos más llenos, fuertes y congestionados."
     ],
@@ -62,7 +62,7 @@
     "category": "proteinas",
     "brand": "spx",
     "weigth": "1080grs",
-    "description": ["description"],
+    "description": ["Whey Protein&Mass es una combinación perfecta de proteínas de suero de leche y carbohidratos para aquellos que buscan ganar masa muscular magra y aumentar de peso de forma saludable."],
     "price": [6500, 7000],
     "stock": 2,
     "thumbnail": "https://i.ibb.co/TBm49Vc/whey-protein-mass-spx.png"
@@ -73,25 +73,25 @@
     "category": "proteinas",
     "brand": "spx",
     "weigth": "1080grs",
-    "description": ["description"],
+    "description": ["Whey Protein Cutter es una opción ideal para aquellos que desean reducir la ingesta de carbohidratos y grasas mientras mantienen un alto nivel de proteínas en su dieta."],
     "price": [5500],
     "stock": 25,
     "thumbnail": "https://i.ibb.co/kxLchVr/whey-cutter-spx.png"
   },
   {
     "id": 7,
-    "name": "Creatina monohidratada saborizada",
+    "name": "Creatina monohidratada",
     "category": "creatinas",
     "brand": "spx",
     "weigth": "300grs",
-    "description": ["description"],
+    "description": ["Creatina monohidratada saborizada es un suplemento popular entre los atletas y culturistas que ayuda a mejorar la fuerza, la potencia y el rendimiento atlético."],
     "price": [7000],
     "stock": 25,
     "thumbnail": "https://i.ibb.co/XVSnMLT/creatina-spx.png"
   },
   {
     "id": 8,
-    "name": "Humantruck prework",
+    "name": "Preentreno Humantruck",
     "category": "preentrenos",
     "brand": "spx",
     "weigth": "1080grs",
@@ -104,11 +104,11 @@
   },
   {
     "id": 9,
-    "name": "BCAA + L-Arginina + Vit C qqq",
+    "name": "BCAA Plus",
     "category": "aminoacidos",
     "brand": "spx",
     "weigth": "300grs",
-    "description": ["description"],
+    "description": ["BCAA + L-Arginina + Vit C es una fórmula avanzada diseñada para apoyar la recuperación muscular, mejorar el rendimiento y aumentar la resistencia durante los entrenamientos intensos."],
     "price": [4800],
     "stock": 25,
     "thumbnail": "https://i.ibb.co/mqcmYCj/bcaa-spx.png"
@@ -119,7 +119,7 @@
     "category": "proteinas",
     "brand": "hardcore",
     "weigth": "1080grs",
-    "description": ["description"],
+    "description": ["Whey Protein es un suplemento de proteína en polvo que puede ayudar a aumentar la masa muscular magra, mejorar la recuperación muscular y satisfacer las necesidades de proteínas diarias."],
     "price": [4000],
     "stock": 2,
     "thumbnail": "https://i.ibb.co/n7QGXR1/whey-protein-hardcore.png"
@@ -131,6 +131,7 @@
     "brand": "hardcore",
     "weigth": "1000grs",
     "description": [
+      "Creatina saborizada es un suplemento popular entre los atletas y culturistas que ayuda a mejorar la fuerza, la potencia y el rendimiento atlético.",
       "Esto es el valor y tengo algo \"entre comillas\" usando comillas dobles"
     ],
     "price": [6000],
@@ -143,7 +144,7 @@
     "category": "aminoacidos",
     "brand": "hardcore",
     "weigth": "300grs",
-    "description": ["description"],
+    "description": ["BCAA es una combinación de tres aminoácidos esenciales: leucina, isoleucina y valina, que son importantes para la síntesis de proteínas musculares y la recuperación muscular."],
     "price": [5000],
     "stock": 25,
     "thumbnail": "https://i.ibb.co/TkCm2JH/bcaa-hardcore.png"
@@ -154,7 +155,7 @@
     "category": "shakers",
     "brand": "varios",
     "weigth": 0,
-    "description": ["description"],
+    "description": ["Shaker negro es un recipiente especialmente diseñado para mezclar proteínas en polvo, batidos y otros suplementos nutricionales. Tiene un diseño ergonómico y un filtro para evitar grumos."],
     "price": [1200],
     "stock": 25,
     "thumbnail": "https://i.ibb.co/RBm2GLq/shaker-negro.png"
@@ -165,7 +166,7 @@
     "category": "shakers",
     "brand": "varios",
     "weigth": 0,
-    "description": ["description"],
+    "description": ["Shaker rojo es un recipiente especialmente diseñado para mezclar proteínas en polvo, batidos y otros suplementos nutricionales. Tiene un diseño ergonómico y un filtro para evitar grumos."],
     "price": [1200, 1399],
     "stock": 25,
     "thumbnail": "https://i.ibb.co/pK2ybgJ/shaker-rojo.png"

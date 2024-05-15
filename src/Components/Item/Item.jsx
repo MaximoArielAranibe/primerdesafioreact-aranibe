@@ -6,7 +6,7 @@ import { Button } from "../Button/Button";
 import { useCart } from "../../context/CartProvider";
 import toast from "react-hot-toast";
 
-const Item = ({ producto }) => {
+export const Item = ({ producto }) => {
   const { addToCart } = useCart();
 
   const handleBuy = () => {
@@ -28,14 +28,14 @@ const Item = ({ producto }) => {
       <div className="info_container">
         <p className="product_brand">
           <Link
-            className="product_link-category"
+            className="product_link-category hover__underline__animation"
             to={`/marcas/${producto.brand}`}
           >
             {capitalize(producto.brand)}
           </Link>
           {` / `}
           <Link
-            className="product_link-category"
+            className="product_link-category hover__underline__animation"
             to={`/suplementos/${producto.category}`}
           >
             {capitalize(producto.category)}

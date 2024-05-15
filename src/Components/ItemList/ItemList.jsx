@@ -1,10 +1,10 @@
 import React from "react";
 import Item from "../Item/Item";
-import "./index.css";
+import "./itemlist.css";
 
 const ItemList = ({ productos }) => {
   return (
-    <section className="item_list_container">
+    <section className="item__list__container">
       {productos.map((producto) => {
         return <Item key={producto.id} producto={producto} />;
       })}

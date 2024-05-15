@@ -9,93 +9,39 @@ const NavBar = () => {
 
   const TotalCart = () => {
     return (
-      <h1 className="total">{totalCart()}</h1>
+      <span className="total">{totalCart()}</span>
     );
   };
 
   return (
-    <nav className="navbar__container">
-        <ul className="navbar_list">
-          <Link to="/">
-            <img src={Logo} alt="Logo" className="logo" />
+    <div className="navbar__container">
+      <ul className="navbar">
+        <li className="navbar__link--container"><Link to="/" className="navbar__link">Inicio</Link></li>
+        <li className="navbar__link--container">
+          <Link to="/suplementos" className="navbar__link">Suplementos</Link>
+          <ul className="dropdown">
+            <li><Link className="dropdown__link">Proteinas</Link></li>
+            <li><Link className="dropdown__link">Creatinas</Link></li>
+            <li><Link className="dropdown__link">Quemadores de grasa</Link></li>
+            <li><Link className="dropdown__link">Aminoácidos</Link></li>
+          </ul>
+        </li>
+        <li className="navbar__link--container">
+          <Link to="/suplementos" className="navbar__link">Marcas</Link>
+          <ul className="dropdown">
+            <li><Link className="dropdown__link">Hardcore</Link></li>
+            <li><Link className="dropdown__link">SPX</Link></li>
+            <li><Link className="dropdown__link">Body Advance</Link></li>
+            <li><Link className="dropdown__link">ENA</Link></li>
+          </ul>
+        </li>
+        <li className="navbar__link--container cart__link--container">
+          <Link to="/carrito" className="navbar__link cart__link">
+            <span className="cart__icon">Carrito<SvgCart /></span>
           </Link>
-          <li className="navbar_category">
-            <Link to="/" className="navbar_category-link">
-              INICIO
-            </Link>
-          </li>
-
-          <li className="navbar_category">
-            <Link
-              to="/suplementos"
-              className="navbar_category-link suplementos"
-            >
-              SUPLEMENTOS
-            </Link>
-            <ul className="sub-menu">
-              <li className="sub-menu_link">
-                <Link className="link" to="/suplementos/proteinas">
-                  Proteinas
-                </Link>
-              </li>
-              <li className="sub-menu_link">
-                <Link className="link" to={"/suplementos/creatinas"}>
-                  Creatinas
-                </Link>
-              </li>
-              <li className="sub-menu_link">
-                <Link className="link" to="/suplementos/preentrenos">
-                  Pre-entrenos
-                </Link>
-              </li>
-              <li className="sub-menu_link">
-                <Link className="link" to="/suplementos/quemadores-de-grasa">
-                  Quemadores de grasa
-                </Link>
-              </li>
-              <li className="sub-menu_link">
-                <Link className="link" to="/suplementos/shakers">
-                  Shakers
-                </Link>
-              </li>
-            </ul>
-          </li>
-
-          <li className="navbar_category">
-            <Link className="navbar_category-link">MARCAS</Link>
-            <ul className="sub-menu">
-              <li className="sub-menu_link">
-                <Link className="link" to="/marcas/bodyadvance">
-                  Body Advance
-                </Link>
-              </li>
-              <li className="sub-menu_link">
-                <Link className="link" to="/marcas/ena">
-                  Ena
-                </Link>
-              </li>
-              <li className="sub-menu_link">
-                <Link className="link" to="/marcas/hardcore">
-                  Hardcore
-                </Link>
-              </li>
-              <li className="sub-menu_link">
-                <Link className="link" to={"/marcas/spx"}>
-                  Spx
-                </Link>
-              </li>
-            </ul>
-          </li>
-        </ul>
-
-      <div className="rigthside">
-        <Link to="/carrito" className="navbar_category-link">
-            CARRITO
-              <SvgCart />
-            {totalCart() > 0 && <TotalCart />}
-            </Link>          
-      </div>
-    </nav>
+        </li>
+      </ul>
+    </div>
   );
 };
 

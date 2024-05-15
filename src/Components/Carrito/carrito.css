@@ -1,23 +1,53 @@
-h4{
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+h4 {
   margin-bottom: 0;
+}
+
+hr {
+  margin: 0 0 1rem !important;
+}
+
+
+.trashSVG {
+  fill: #d32b2e;
+}
+
+.trashSVG>svg {
+  width: 18px;
+  height: 18px;
+  vertical-align: sub;
+  margin-left: 4px;
+}
+
+.sedgwick-ave-display-regular {
+  font-family: "Sedgwick Ave Display", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 40px;
+  color: indigo;
+  padding: 6rem 3rem 3rem;
 }
 
 .cart__container {
   width: 100%;
   font-size: 16px;
+  background-image: url("../../assets/background-wallpaper.jpg");
+  background-size: cover;
 }
+
 
 .cart__title {
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  margin: 2rem 2px;
   font-size: 24px;
   font-weight: 700;
   display: block;
 
 }
 
-.cart__title > svg {
+.cart__title>svg {
   vertical-align: baseline;
 }
 
@@ -33,8 +63,8 @@ h4{
 .item {
   display: flex;
   flex-flow: row nowrap;
-  margin: 0.5rem 8px;
   justify-content: flex-start;
+  margin: 0.5rem 0;
   align-items: flex-start;
   background-color: #fff;
   border: 1px rgba(0, 0, 0, 0.067) solid;
@@ -43,13 +73,13 @@ h4{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   gap: 8px;
   width: 90%;
+
 }
 
 .item__img__container {
   display: flex;
   align-self: stretch;
 }
-
 
 .item__img {
   width: 65px;
@@ -59,7 +89,7 @@ h4{
   display: flex;
   flex-flow: column wrap;
   font-size: 12px;
-  width: 60%;
+  width: 90%;
   height: min-content;
 }
 
@@ -80,13 +110,14 @@ h4{
 }
 
 
-.item__price > span {
+.item__price>span {
   font-weight: 500;
 }
 
-.item__actions{
+.item__actions {
   display: flex;
   height: 100%;
+  align-self: center;
 }
 
 .item__button {
@@ -112,10 +143,11 @@ h4{
 .cart__total {
   text-align: right;
   margin-right: 5%;
-  font-weight: 400;
+  font-weight: 600;
+  color: yellow;
 }
 
-.cart__total > span {
+.cart__total>span {
   font-weight: 500;
 }
 
@@ -126,10 +158,11 @@ h4{
   justify-content: center;
 }
 
-.cart__actions > button {
+.cart__actions>button {
   color: #fff;
   text-transform: uppercase;
   width: 90%;
+  max-height: 32px;
   padding: 4px;
   border: none;
   background-color: indigo;
@@ -137,53 +170,129 @@ h4{
   cursor: pointer;
 }
 
-.cart__actions > button:first-of-type {
+.cart__actions>p {
+  margin: 8px 0;
+}
+
+.cart__actions>button:first-of-type {
   margin-bottom: 8px;
 }
 
-.cart__actions > button:hover{
+
+.cart__actions>button:hover {
   color: rgb(249, 249, 20);
   transition: 0.5s ease;
 }
 
+.more__items__container>p {
+  font-size: 24px;
+  text-align: center;
+  padding: 0 16px;
+  margin: 16px 0;
+  font-weight: 800;
+  letter-spacing: 8px;
+}
 
-@media(width > 576px){
-  .item__img{
+.more__items {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.more__items>li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(width > 576px) {
+  .item__img {
     width: 80px;
     height: 80px;
   }
 
-  .item__title{
+  .item__title {
     font-size: 16px;
   }
 
-  .item__quantity{
+  .item__quantity {
     font-size: 16px;
     margin-bottom: 4px;
   }
 
-  .item__price{
+  .item__price {
     font-size: 16px;
   }
 
-  .cart__total{
+  .cart__total {
     font-size: 20px;
     margin-bottom: 1rem;
   }
 
-  .cart__actions{
+  .cart__actions {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     align-items: baseline;
-    justify-content: center;
+    justify-content: start;
+    padding-left: 16px;
   }
 
-  .cart__actions > button {
-    width: 40%;
+  .cart__actions>button {
+    width: 32%;
   }
 
-  .cart__actions > button:first-of-type {
+  .cart__actions>p {
+    margin: 1rem;
+  }
+
+  .cart__actions>button:first-of-type {
     margin-right: 1rem;
   }
+
+  .more__items {
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+  }
+
+  .more__items>li {
+    align-items: baseline;
+  }
+}
+
+@media(width > 992px) {
+  .sedgwick-ave-display-regular {
+    font-size: 52px;
+    padding: 6rem 3rem 3rem;
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  }
+
+  .more__items__container > p {
+    font-size: 40px !important;
+    margin: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .item {
+    width: 90%;
+    padding: 16px;
+  }
+
+  .item__wrapper {
+    margin-left: 8px;
+  }
+
+  .cart__total {
+    font-size: 24px;
+  }
+
+  .cart__actions {
+    justify-content: flex-end;
+    margin-left: 0;
+    width: 95%;
+  }
+
 }

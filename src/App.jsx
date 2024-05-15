@@ -5,7 +5,7 @@ import ItemListContainer from "./Components/ItemListContainer/ItemListcontainer.
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ItemDetailContainer } from "./Components/ItemDetailContainer/ItemDetailContainer.jsx";
 import ErrorPage from "./Components/ErrorPage.jsx/ErrorPage.jsx";
-import { MyCarousel } from "./Components/Carousel/MyCarousel.jsx";
+import { CarouselHeader } from "./Components/Carousel/CarouselHeader.jsx";
 import { Text } from "./Components/Text/Text.jsx";
 import ScrollToTop from "react-scroll-to-top";
 import Marcas from "./Components/Marcas/Marcas.jsx";
@@ -44,7 +44,7 @@ function App() {
                 path="/"
                 element={
                   <>
-                    <MyCarousel />
+                    <CarouselHeader />
                     <main>
                       <Text texto="¡Nuestros Productos!" />
                       <ItemListContainer />

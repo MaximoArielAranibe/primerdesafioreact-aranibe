@@ -46,7 +46,7 @@ const ItemDetail = ({ productos }) => {
 
   return (
     <main className="itemdetail">
-      <h1> {">"} Detalles del producto</h1>
+      <h1 className="sedgwick-ave-display-regular hover__underline__animation"> {">"} Detalles del producto</h1>
       <article className="itemdetail__article">
         <div className="itemdetail__header">
           <img className="itemdetail__image" src={thumbnail} alt={name} />
@@ -58,9 +58,9 @@ const ItemDetail = ({ productos }) => {
               <Link className="itemdetail__brand" to={`/marcas/${brand}`}>
                 <span className="hover__underline__animation">{brand}</span>
               </Link>
-              <Tab />
-              {"/"}
-              <Tab />
+                <Tab />
+                {"/"}
+                <Tab />
               <Link className="itemdetail__category" to={`/suplementos/${category}`}>
                 <span className="hover__underline__animation">{category}</span>
               </Link>

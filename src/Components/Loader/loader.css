@@ -1,6 +1,6 @@
 /* Spinner.css */
 
-.loader-container {
+.loader__container {
   position: fixed;
   top: 0;
   left: 0;
@@ -24,5 +24,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  body{
+    background-color: #222f3e;
+  }
+
+  .loader__title{
+    color: #fff;
   }
 }

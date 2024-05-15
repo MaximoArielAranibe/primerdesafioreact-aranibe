@@ -5,6 +5,8 @@ import { useCart } from "../../context/CartProvider";
 import '../Button/index.css';
 import { db } from "../../firebase/firebase.js";
 import { collection, getDocs, addDoc } from "firebase/firestore";
+import SvgCart from "../SvgCart/SvgCart.jsx";
+import './index.css';
 
 const customStyles = {
 	content: {
@@ -15,7 +17,8 @@ const customStyles = {
 		marginRight: '-50%',
 		transform: 'translate(-50%, -50%)',
 		padding: '0',
-	},
+		backgroundColor: "none"
+		},
 };
 
 
@@ -24,6 +27,7 @@ export const ModalForm = () => {
 	const [openedModal, setOpenedModal] = useState(false);
 	const [email, setEmail] = useState('');
 	const [numberOfOrder, setNumberOfOrder] = useState(1);
+
 
 	useEffect(() => {
 		const getNumberOfOrder = async () => {
@@ -36,7 +40,6 @@ export const ModalForm = () => {
 				console.error("Error al obtener el número de orden:", error)
 			}
 		};
-
 		getNumberOfOrder()
 	}, []);
 
@@ -59,8 +62,6 @@ export const ModalForm = () => {
 	});
 
 	emailjs.init('SAfLDKK81aknEdPMH');
-
-
 
 	const openModal = () => {
 		setOpenedModal(true);
@@ -108,7 +109,7 @@ export const ModalForm = () => {
 
 	return (
 		<>
-			<button className='' onClick={openModal}>Comprar carrito</button>
+			<button className="modalform" onClick={openModal}>Comprar carrito<span><SvgCart /></span></button>
 			<Modal
 				isOpen={openedModal}
 				onRequestClose={closedModal}
@@ -116,20 +117,29 @@ export const ModalForm = () => {
 				ariaHideApp={false}
 				contentLabel="Formulario Modal"
 			>
-				<h2>Formulario</h2>
-				<p></p>
-				<form onSubmit={handleSubmit}>
-					<label>
-						Correo electrónico:
-						<input
-							type="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							required
-						/>
-					</label>
-					<button type="submit">Enviar</button>
-				</form>
+				<div className="modal__container">
+					<div className="modal__wrapper">
+						<h2 className="modal__title">⭐Ingresá tu email para poder finalizar la compra.</h2>
+						<button className="modal__wrapper--button" onClick={closedModal}>X</button>
+
+					</div>
+					<form className="modal__form" onSubmit={handleSubmit}>
+						<label className="modal__label">
+							<div className="label__wrapper">
+								<input
+									className="label__input"
+									type="email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									required
+									placeholder="vitalsport@hotmail.com"
+									aria-required
+								/>
+								<button type="submit">Enviar</button>
+							</div>
+						</label>
+					</form>
+				</div>
 			</Modal>
 		</>
 	);
