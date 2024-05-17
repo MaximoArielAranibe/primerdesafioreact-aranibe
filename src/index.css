@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
 
-:root{
-  --fs24: 24px;
-}
-
 .hover__underline__animation {
   display: inline-block;
   position: relative;
@@ -16,7 +12,6 @@
   color: #32c2b9;
   cursor: pointer;
 }
-
 
 .hover__underline__animation::after,
 .hover__underline__animation--reverse::after {
@@ -54,6 +49,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html{
+  height: 100%;
 }
 
 

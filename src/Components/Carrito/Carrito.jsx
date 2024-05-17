@@ -53,7 +53,7 @@ const Carrito = () => {
 
   return (
     <main className="cart__container">
-      <h1 className="sedgwick-ave-display-regular">CARRITO DE COMPRAS</h1>
+      <h1 className="sedgwick-ave-display-regular cart__container--title">CARRITO DE COMPRAS</h1>
       <hr />
       {cart.length === 0 ? (
         <p>Uppss, el carrito esta vació.</p>

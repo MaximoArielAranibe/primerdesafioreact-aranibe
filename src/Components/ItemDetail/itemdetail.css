@@ -1,3 +1,7 @@
+li{
+  list-style: none;
+}
+
 .itemdetail {
   width: 100%;
   height: 100%;
@@ -9,9 +13,13 @@
   font-family: Poppins, sans-serif;
 }
 
+.itemdetail--title{
+  margin: 8rem 3rem 5rem;
+  padding: 0 !important;
+}
+
 .itemdetail>h1 {
   font-weight: 700;
-  margin: 3rem;
   cursor: text !important;
 }
 
@@ -24,7 +32,8 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 32px;
+  background-color: #FFF;
+  margin-bottom: 6rem;
 }
 
 .itemdetail__image {
@@ -119,7 +128,7 @@
   }
 
   .itemdetail__article {
-    width: 70%;
+    width: 50%;
   }
 }
 
@@ -131,7 +140,6 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
-    margin-top: 32px;
   }
 
   .itemdetail__header {

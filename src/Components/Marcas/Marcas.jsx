@@ -6,6 +6,7 @@ import { useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { Text } from "../Text/Text.jsx";
 import { toCapital } from "../helpers/toCapital";
+import './marcas.css'
 
 const Marcas = () => {
   const [productos, setProductos] = useState([]);
@@ -22,8 +23,10 @@ const Marcas = () => {
   }, [brand]);
   return (
     <>
+    <main className="marcas__container">
       <Text texto={`Marca: ${toCapital(brand)}`} />
       <ItemList productos={productos} />
+    </main>
     </>
   );
 };

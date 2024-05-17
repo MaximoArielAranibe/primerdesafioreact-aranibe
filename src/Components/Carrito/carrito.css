@@ -8,6 +8,9 @@ hr {
   margin: 0 0 1rem !important;
 }
 
+ul{
+  padding: 0;
+}
 
 .trashSVG {
   fill: #d32b2e;
@@ -28,13 +31,19 @@ hr {
   font-size: 40px;
   color: indigo;
   padding: 6rem 3rem 3rem;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 }
 
 .cart__container {
   width: 100%;
   font-size: 16px;
   background-image: url("../../assets/background-wallpaper.jpg");
-  background-size: cover;
+  background-size: auto;
+  animation: slidein 100s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
 }
 
 
@@ -145,6 +154,7 @@ hr {
   margin-right: 5%;
   font-weight: 600;
   color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .cart__total>span {
@@ -184,11 +194,16 @@ hr {
   transition: 0.5s ease;
 }
 
+.more__items__container{
+  padding: 3rem 0 5rem;
+
+}
+
 .more__items__container>p {
   font-size: 24px;
   text-align: center;
   padding: 0 16px;
-  margin: 16px 0;
+  margin: 0 0 40px;
   font-weight: 800;
   letter-spacing: 8px;
 }
@@ -207,7 +222,16 @@ hr {
   align-items: center;
 }
 
-@media(width > 576px) {
+.more__items > li > article > .info_container > .product_name-container{
+  min-height: 80px;
+}
+
+@media(width > 575.98px) {
+
+  .cart__container--title{
+    padding: 8rem 3rem 4rem;
+  }
+
   .item__img {
     width: 80px;
     height: 80px;
@@ -228,7 +252,8 @@ hr {
 
   .cart__total {
     font-size: 20px;
-    margin-bottom: 1rem;
+    position: relative;
+    top: 3px;
   }
 
   .cart__actions {
@@ -236,7 +261,7 @@ hr {
     display: flex;
     flex-flow: row wrap;
     align-items: baseline;
-    justify-content: start;
+    justify-content: center;
     padding-left: 16px;
   }
 
@@ -266,14 +291,11 @@ hr {
 @media(width > 992px) {
   .sedgwick-ave-display-regular {
     font-size: 52px;
-    padding: 6rem 3rem 3rem;
-    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
   }
 
   .more__items__container > p {
     font-size: 40px !important;
-    margin: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 0 3rem;
   }
 
   .item {
@@ -287,6 +309,7 @@ hr {
 
   .cart__total {
     font-size: 24px;
+    top: 5px;
   }
 
   .cart__actions {
@@ -294,5 +317,4 @@ hr {
     margin-left: 0;
     width: 95%;
   }
-
 }

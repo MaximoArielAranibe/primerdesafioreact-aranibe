@@ -20,19 +20,21 @@ const NavBar = () => {
         <li className="navbar__link--container">
           <Link to="/suplementos" className="navbar__link">Suplementos</Link>
           <ul className="dropdown">
-            <li><Link className="dropdown__link">Proteinas</Link></li>
-            <li><Link className="dropdown__link">Creatinas</Link></li>
-            <li><Link className="dropdown__link">Quemadores de grasa</Link></li>
-            <li><Link className="dropdown__link">Aminoácidos</Link></li>
+            <li><Link to="/suplementos/proteinas" className="dropdown__link">Proteinas</Link></li>
+            <li><Link to="/suplementos/creatinas" className="dropdown__link">Creatinas</Link></li>
+            <li><Link to="/suplementos/quemadores-de-grasa" className="dropdown__link">Quemadores de grasa</Link></li>
+            <li><Link to="/suplementos/aminoacidos" className="dropdown__link">Aminoácidos</Link></li>
+            <li><Link to="/suplementos/shakers" className="dropdown__link">Shakers</Link></li>
+
           </ul>
         </li>
         <li className="navbar__link--container">
-          <Link to="/suplementos" className="navbar__link">Marcas</Link>
+          <span to="/marcas" className="navbar__link marcas">Marcas</span>
           <ul className="dropdown">
-            <li><Link className="dropdown__link">Hardcore</Link></li>
-            <li><Link className="dropdown__link">SPX</Link></li>
-            <li><Link className="dropdown__link">Body Advance</Link></li>
-            <li><Link className="dropdown__link">ENA</Link></li>
+            <li><Link to="/marcas/hardcore" className="dropdown__link">Hardcore</Link></li>
+            <li><Link to="/marcas/spx" className="dropdown__link">SPX</Link></li>
+            <li><Link to="/marcas/bodyadvance" className="dropdown__link">Body Advance</Link></li>
+            <li><Link to="/marcas/ena" className="dropdown__link">ENA</Link></li>
           </ul>
         </li>
         <li className="navbar__link--container cart__link--container">

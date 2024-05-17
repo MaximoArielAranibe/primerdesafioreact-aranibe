@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.marcas{
+  cursor: pointer;
+}
+
 .navbar__container{
   display: flex;
   align-items: baseline;

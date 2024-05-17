@@ -46,7 +46,7 @@ const ItemDetail = ({ productos }) => {
 
   return (
     <main className="itemdetail">
-      <h1 className="sedgwick-ave-display-regular hover__underline__animation"> {">"} Detalles del producto</h1>
+      <h1 className="sedgwick-ave-display-regular hover__underline__animation itemdetail--title"> {">"} Detalles del producto</h1>
       <article className="itemdetail__article">
         <div className="itemdetail__header">
           <img className="itemdetail__image" src={thumbnail} alt={name} />
