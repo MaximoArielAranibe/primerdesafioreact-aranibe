@@ -81,7 +81,13 @@ function App() {
                 element={<Carrito />}
                 errorElement={<ErrorPage />}
               />
+              <Route
+                path="/footer"
+                element={<Footer />}
+                errorElement={<ErrorPage />}
+              />
             </Routes>
+
           )}
         </BrowserRouter>
       </div>

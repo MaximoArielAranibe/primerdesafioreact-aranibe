@@ -20,6 +20,16 @@ a{
   text-decoration: none;
 }
 
+.scroll-to-top{
+  right: 8px !important;
+    bottom: 8px !important;
+
+}
+
+.scroll-to-top > svg {
+  margin-left: 0;
+}
+
 @media (prefers-color-scheme: dark){
   body{
     background-color: #222f3e;
