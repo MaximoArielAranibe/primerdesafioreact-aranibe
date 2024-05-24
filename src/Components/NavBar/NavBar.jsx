@@ -18,7 +18,7 @@ const NavBar = () => {
       <ul className="navbar">
         <li className="navbar__link--container"><Link to="/" className="navbar__link">Inicio</Link></li>
         <li className="navbar__link--container">
-          <Link to="/suplementos" className="navbar__link">Suplementos</Link>
+          <span to="/suplementos" className="navbar__link marcas">Suplementos</span>
           <ul className="dropdown">
             <li><Link to="/suplementos/proteinas" className="dropdown__link">Proteinas</Link></li>
             <li><Link to="/suplementos/creatinas" className="dropdown__link">Creatinas</Link></li>
