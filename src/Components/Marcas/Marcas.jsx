@@ -11,6 +11,7 @@ import './marcas.css'
 const Marcas = () => {
   const [productos, setProductos] = useState([]);
   const brand = useParams().brand;
+
   useEffect(() => {
     pedirProductos().then((res) => {
       if (brand) {

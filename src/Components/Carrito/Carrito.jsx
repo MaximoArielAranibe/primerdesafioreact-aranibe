@@ -56,7 +56,7 @@ const Carrito = () => {
       <h1 className="sedgwick-ave-display-regular cart__container--title">CARRITO DE COMPRAS</h1>
       <hr />
       {cart.length === 0 ? (
-        <p>Uppss, el carrito esta vació.</p>
+        <p className="cart__empty">Uppss, el carrito esta vació.</p>
       ) : (
         <ul className="cart__list">
           {cart.map((item) => (
@@ -81,6 +81,7 @@ const Carrito = () => {
           ))}
         </ul>
       )}
+      <hr />
       <div className="cart__actions">
         <p className="cart__total">Total: <span> ${separadorDeMiles()}</span></p>
         <ModalForm />

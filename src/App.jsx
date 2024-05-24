@@ -52,13 +52,7 @@ function App() {
               />
               <Route
                 exact
-                path="/suplementos"
-                element={<ItemListContainer />}
-                errorElement={<ErrorPage />}
-              />
-              <Route
-                exact
-                path="/suplementos/:categoria"
+                path="/suplementos/:category"
                 element={<ItemListContainer />}
                 errorElement={<ErrorPage />}
               />

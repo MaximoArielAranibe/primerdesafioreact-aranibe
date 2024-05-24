@@ -3,7 +3,7 @@ import './index.css'
 
 export const Text = ({texto}) => {
   return (
-        <h4 className="title">{texto}</h4>
+        <h4 className="title category__margin">{texto}</h4>
   )
 }
 
