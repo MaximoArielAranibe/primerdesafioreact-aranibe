@@ -14,7 +14,7 @@ import Carrito from "./Components/Carrito/Carrito.jsx";
 import { Toaster } from "react-hot-toast";
 import Loader from "./Components/Loader/Loader.jsx";
 import { Footer } from "./Components/Footer/Footer.jsx"
-
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -84,6 +84,7 @@ function App() {
 
           )}
         </BrowserRouter>
+        <SpeedInsights />
       </div>
     </CartProvider>
   );
