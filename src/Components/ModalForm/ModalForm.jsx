@@ -7,6 +7,7 @@ import { db } from "../../firebase/firebase.js";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import SvgCart from "../SvgCart/SvgCart.jsx";
 import './index.css';
+import toast from "react-hot-toast";
 
 const customStyles = {
 	content: {
@@ -18,7 +19,7 @@ const customStyles = {
 		transform: 'translate(-50%, -50%)',
 		padding: '0',
 		backgroundColor: "none"
-		},
+	},
 };
 
 
@@ -27,7 +28,6 @@ export const ModalForm = () => {
 	const [openedModal, setOpenedModal] = useState(false);
 	const [email, setEmail] = useState('');
 	const [numberOfOrder, setNumberOfOrder] = useState(1);
-
 
 	useEffect(() => {
 		const getNumberOfOrder = async () => {
@@ -73,8 +73,7 @@ export const ModalForm = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("Formulario enviado");
-
+		toast.success('Correo enviado con éxito', { position: "bottom-center"})
 		try {
 			// Enviar correo electrónico
 			await emailjs.send("service_36n7yza", "template_z72rmlg", {
@@ -104,8 +103,6 @@ export const ModalForm = () => {
 			console.error("Error al enviar el correo electrónico:", error);
 		}
 	};
-
-
 
 	return (
 		<>
@@ -140,7 +137,7 @@ export const ModalForm = () => {
 						</label>
 					</form>
 				</div>
-			</Modal>
+			</Modal >
 		</>
 	);
 };
