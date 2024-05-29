@@ -31,17 +31,19 @@ const CartProvider = ({ children }) => {
   };
 
   const removeItem = (itemId) => {
-    const updatedCart = cart.map((cartItem) =>
-      cartItem.id === itemId
-        ? { ...cartItem, quantity: cartItem.quantity - 1 }
-        : cartItem
-    );
+    const confirmDeletion = () => window.confirm('¿Estás seguro de que deseas eliminar este producto?');
 
-    const filteredCart = updatedCart.filter(
-      (cartItem) => cartItem.quantity > 0
-    );
+    const updateQuantity = (cartItem) => {
+      if (cartItem.id !== itemId) return cartItem;
+      if (cartItem.quantity === 1 && !confirmDeletion()) return cartItem;
+      return { ...cartItem, quantity: cartItem.quantity - 1 };
+    };
+
+    const updatedCart = cart.map(updateQuantity);
+    const filteredCart = updatedCart.filter((cartItem) => cartItem.quantity > 0);
     setCart(filteredCart);
   };
+
 
   const addItem = (itemId) => {
     const updatedCart = cart.map((cartItem) =>

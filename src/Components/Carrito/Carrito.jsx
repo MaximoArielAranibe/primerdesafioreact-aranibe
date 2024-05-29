@@ -20,13 +20,19 @@ const Carrito = () => {
 
   const handleRemoveItem = (item) => {
     removeItem(item.id);
-    toast.error(`Has eliminado una unidad: ${item.name}`, { position: "bottom-center" });
+    toast.error(`Has eliminado una unidad: ${item.name}`, {
+      position: "bottom-center",
+      duration: 1200
+    });
   };
 
   const handleAddItem = (item) => {
     addItem(item.id);
     toast.success(`Has agregado una unidad: ${item.name}`,
-      { position: "bottom-center" });
+      {
+        position: "bottom-center",
+        duration: 1200
+      });
   };
 
   const separadorDeMiles = () => {
@@ -88,9 +94,9 @@ const Carrito = () => {
         <button onClick={clearCart}>Vaciar carrito<TrashSVG /></button>
       </div>
       <div className="more__items__container">
-          <p className="sedgwick-ave-display-regular">Articulos que podrián interesarte...</p>
+        <p className="sedgwick-ave-display-regular">Articulos que podrián interesarte...</p>
         <ul className="more__items">
-          {items.slice(7,10).map((e) => (
+          {items.slice(7, 10).map((e) => (
             <li key={e.id}><Item producto={e} /></li>
           ))}
         </ul>
